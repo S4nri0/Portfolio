@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Divine's Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Andika&family=Risque&family=Spicy+Rice&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Mobile Menu Button -->
+  <button class="menu-toggle" id="menuToggle">☰</button>
+
+  <!-- Overlay for Mobile -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar" id="sidebar">
+    <button class="close-btn" id="closeBtn">×</button>
+    <div class="sidebar-header">
+      <h2>ʚɞ Divine ʚɞ</h2>
+    </div>
+    <div class="sidebar-nav">
+      <a href="about.html" class="nav-link" data-tooltip="About">
+        <div class="nav-icon">
+          <img src="Images/about.png" alt="About" class="nav-image">
+        </div>
+      </a>
+      <a href="work.html" class="nav-link" data-tooltip="Work">
+        <div class="nav-icon">
+          <img src="Images/workpic.png" alt="Work" class="nav-image">
+        </div>
+      </a>
+      <a href="index.html" class="nav-link active" data-tooltip="Home">
+        <div class="nav-icon">
+          <img src="Images/hometv.png" alt="Home" class="nav-image">
+        </div>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="content-container">
+    <div class="rounded-content-box">
+      <section id="home" class="home-content active-section">
+        <div class="home-inner">
+          <div class="home-image">
+            <img src="Images/mainpic.png" alt="Divine Portrait">
+          </div>
+          <div class="home-text">
+            <h1>Hi! I'm Divine</h1>
+            <h2>Digital Tinker</h2>
+            <p>I'm a Software Development student interested in code, art, and interactive media! This is my website — feel free to browse around!</p>
+			<br/>
+			<section>
+				<h2>My Virtual Pet</h2>
+					<p>Here's a virtual pet! Interact with it and see what happens.</p>
+				<br/>
+				<div>
+				<iframe style="width:315px;height:335px;" src="https://gifypet.neocities.org/pet/pet.html?name=Divine&dob=1753564037&gender=f&element=Water&pet=https%3A%2F%2Fmedia0.giphy.com%2Fmedia%2Fv1.Y2lkPTc5MGI3NjExYmEzdXRuNzdsYnFqeGE1aTY5aDZ6dDZlYXIxeWMzOW1odjIwd2tybiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw%2FbgVULgkgW61fZ3oY60%2Fgiphy.gif&map=town.gif&background=paper.jpg&tablecolor=%23529d32&textcolor=black">
+				</iframe>
+				</div>
+			</section>
+          </div>
+
+        </div>
+      </section>
+	  <!-- Footer -->
+    <footer class="footer">
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/divinenka" target="_blank" class="social-icon linkedin" aria-label="LinkedIn"></a>
+        <a href="https://github.com/S4nri0" target="_blank" class="social-icon github" aria-label="GitHub"></a>
+        <a href="mailto:divine.nkanga1@gmail.com" class="social-icon gmail" aria-label="Gmail"></a>
+      </div>
+    </footer>
+  </div>
+    </div>
+
+    
+
+  <script src="portfolio.js"></script>
+</body>
+</html>

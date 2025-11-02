@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Divine's Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Andika&family=Risque&family=Spicy+Rice&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Mobile Menu -->
+  <button class="menu-toggle" id="menuToggle">☰</button>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <button class="close-btn" id="closeBtn">×</button>
+    <div class="sidebar-header">
+      <h2>ʚɞ Divine ʚɞ</h2>
+    </div>
+    <div class="sidebar-nav">
+      <a href="about.html" class="nav-link active" data-tooltip="About">
+        <div class="nav-icon"><img src="Images/about.png" alt="About" class="nav-image"></div>
+      </a>
+      <a href="work.html" class="nav-link" data-tooltip="Work">
+        <div class="nav-icon"><img src="Images/workpic.png" alt="Work" class="nav-image"></div>
+      </a>
+      <a href="index.html" class="nav-link" data-tooltip="Home">
+        <div class="nav-icon"><img src="Images/hometv.png" alt="Home" class="nav-image"></div>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <div class="content-container">
+    <div class="rounded-content-box about-content">
+
+      <!-- Introduction -->
+      <section class="about-section intro-section">
+        <div class="about-flex">
+          <div class="about-image">
+            <img src="Images/mainpic.png" alt="Divine portrait">
+          </div>
+          <div class="about-text">
+            <h1>About Me</h1>
+            <p>Hi! I'm <strong>Divine Nkanga</strong>—a Software Development student with a passion for UX design and data science. I enjoy blending creativity with technology to craft experiences that are not only visually appealing but also truly impactful.
+			<br/>
+			When I'm not coding, I enjoy exploring art, storytelling, and digital media — I see creativity as a bridge between people and technology.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Clubs and Involvement -->
+      <section class="about-section clubs-section">
+        <h2>Clubs & Organizations</h2>
+
+        <div class="club">
+          <button class="club-toggle">🎨 Fine Arts Studio Club</button>
+          <div class="club-content">
+            <p><strong>Role:</strong> Event Coordinator </p>
+            <p>The Fine Arts Studio Club encourages creativity through student-led workshops, gallery events, and collaborative art projects. Our mission is to create a welcoming space for artists of all levels to share ideas, experiment, and showcase their work.</p>
+            <p><strong>Goal:</strong> Build an inclusive community that celebrates visual storytelling and artistic growth.</p>
+          </div>
+        </div>
+
+        <div class="club">
+          <button class="club-toggle">🧪 STEM Forward Club</button>
+          <div class="club-content">
+            <p><strong>Role:</strong> Club Officer </p>
+            <p>The STEM Forward Club brings together students in science, technology, engineering, and mathematics to collaborate, network, and share opportunities. We host meetups, speaker events, and workshops to help members grow academically and professionally.</p>
+            <p><strong>Goal:</strong> Foster a supportive community where STEM students can learn, innovate, and make lasting connections.</p>
+          </div>
+        </div>
+
+        <div class="club">
+          <button class="club-toggle">🌟 Student Ambassador Program</button>
+          <div class="club-content">
+            <p><strong>Role:</strong> Student Ambassador</p>
+            <p>As a Student Ambassador, I help represent the College of DuPage by assisting with events, guiding new students, and promoting engagement in campus life.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interests -->
+      <section class="about-section interests-section">
+        <h2>Interests</h2>
+        <p>I'm interested in <strong>human-centered design</strong>, <strong>data visualization</strong>, and how technology can make education and art more accessible. I'm also passionate about cultural storytelling, representation, and digital expression.</p>
+      </section>
+
+      <!-- Art Gallery with Modal -->
+      <section class="about-section gallery-section">
+        <h2>My Artwork</h2>
+        <p class="gallery-intro">Click on any artwork to view details and learn more about each piece.</p>
+
+        <!-- Tabs -->
+        <div class="tab-buttons">
+          <button class="tab-btn active" data-tab="ceramic">🏺 Ceramic Art</button>
+          <button class="tab-btn" data-tab="pencil">✏️ Traditional Art</button>
+          <button class="tab-btn" data-tab="digital">💻 Digital Art</button>
+        </div>
+
+        <!-- Ceramic Art Tab -->
+        <div class="tab-content active" id="ceramic">
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="Images/ceramic1.jpg" alt="Handcrafted ceramic vase with intricate patterns" loading="lazy">
+              <div class="image-info">
+                <div class="image-title">Organic Vase Collection</div>
+                <div class="image-description">Hand-built ceramic vases exploring organic forms and textures</div>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img src="Images/ceramic2.jpg" alt="Ceramic sculpture showcasing texture and form" loading="lazy">
+              <div class="image-info">
+                <div class="image-title">Textural Sculpture</div>
+                <div class="image-description">Experimental piece focusing on surface texture and abstract form</div>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img src="Images/ceramic 3.png" alt="Collection of ceramic pieces in various shapes" loading="lazy">
+              <div class="image-info">
+                <div class="image-title">Sci-Fi Sculpture</div>
+                <div class="image-description">Tardis from Doctor Who</div>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img src="Images/ceramic4.png" alt="Glazed ceramic artwork with vibrant colors" loading="lazy">
+              <div class="image-info">
+                <div class="image-title">Color Exploration</div>
+                <div class="image-description">Glaze testing and color theory application on functional ware</div>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img src="Images/ceramic5.png" alt="Detailed ceramic work highlighting craftsmanship" loading="lazy">
+              <div class="image-info">
+                <div class="image-title">Precision Craft</div>
+                <div class="image-description">Wheel-thrown piece demonstrating technical skill and attention to detail</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Traditional Art Tab -->
+        <div class="tab-content" id="pencil">
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="Images/stilllife.png" alt="Pencil still life drawing with shading techniques" loading="lazy">
+              <div class="image-info">
+                <div class="image-title">Still Life Study</div>
+                <div class="image-description">Graphite pencil drawing focusing on value and composition</div>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img src="Images/still1.png" alt="Traditional pencil sketch study" loading="lazy">
+              <div class="image-info">
+                <div class="image-title">Dirty Laundry</div>
+                <div class="image-description">Still life of my Dirty Laundry</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Digital Art Tab -->
+        <div class="tab-content" id="digital">
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="Images/duckie.png" alt="Digital artwork showcasing character design" loading="lazy">
+              <div class="image-info">
+                <div class="image-title">Duckie</div>
+                <div class="image-description">Digital character art of a human rubber duckie</div>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img src="Images/Gaia.png" alt="Digital painting with vibrant color palette" loading="lazy">
+              <div class="image-info">
+                <div class="image-title">Gaia</div>
+                <div class="image-description">Experimental digital piece focusing on color harmony and mood</div>
+              </div>
+            </div>
+			<div class="gallery-item">
+              <img src="Images/Milk_Bath.png" alt="Digital painting with vibrant color palette" loading="lazy">
+              <div class="image-info">
+                <div class="image-title">Milk Bath</div>
+                <div class="image-description">Woman enjoying milk bath</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Image Modal -->
+      <div id="imageModal" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <img class="modal-image" id="modalImage" alt="Artwork detail view">
+          <div class="modal-info">
+            <h3 class="modal-title" id="modalTitle">Artwork Title</h3>
+            <p class="modal-description" id="modalDescription">Artwork description will appear here.</p>
+          </div>
+        </div>
+      </div>
+		<!-- Footer -->
+    <footer class="footer">
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/divinenka" target="_blank" class="social-icon linkedin" aria-label="LinkedIn"></a>
+        <a href="https://github.com/S4nri0" target="_blank" class="social-icon github" aria-label="GitHub"></a>
+        <a href="mailto:divine.nkanga1@gmail.com" class="social-icon gmail" aria-label="Gmail"></a>
+      </div>
+    </footer>
+  </div>
+    </div>
+
+  <script src="portfolio.js"></script>
+</body>
+</html>
