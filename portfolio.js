@@ -1,5 +1,5 @@
 // ============================================================
-// SIDEBAR DRAWER (mobile)
+// SIDEBAR DRAWER (mobile) — toggles open/closed
 // ============================================================
 const menuToggle = document.getElementById('menuToggle');
 const sidebar    = document.getElementById('sidebar');
@@ -17,8 +17,18 @@ function closeSidebar() {
   document.body.style.overflow = '';
 }
 
-if (menuToggle) menuToggle.addEventListener('click', openSidebar);
-if (overlay)    overlay.addEventListener('click', closeSidebar);
+// Hamburger toggles — press again to close
+if (menuToggle) {
+  menuToggle.addEventListener('click', () => {
+    if (sidebar.classList.contains('active')) {
+      closeSidebar();
+    } else {
+      openSidebar();
+    }
+  });
+}
+
+if (overlay) overlay.addEventListener('click', closeSidebar);
 
 document.querySelectorAll('.nav-item').forEach(link => {
   link.addEventListener('click', () => {
@@ -36,11 +46,11 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeSidebar();
 });
 
+
 /* ============================================================
-   CHAT WIDGET — Firebase Firestore Version
+   CHAT WIDGET — Firebase Firestore
    ============================================================ */
 
-// Wait for the Firebase module to be ready
 window.addEventListener('firebase-ready', () => {
 
   // ---------- Config ----------
@@ -48,13 +58,12 @@ window.addEventListener('firebase-ready', () => {
   const COLLECTION_NAME = 'messages';
   const MAX_MESSAGES = 50;
 
-  // Profanity filter
   const BANNED_WORDS = [
     'fuck', 'shit', 'bitch', 'asshole', 'bastard',
     'damn', 'crap', 'dick', 'piss', 'slut', 'whore'
   ];
 
-  // ---------- Firebase References ----------
+  // ---------- Firebase refs ----------
   const {
     db, collection, addDoc, getDocs, deleteDoc, doc, query, orderBy, serverTimestamp
   } = window.firebaseChat;
@@ -63,15 +72,15 @@ window.addEventListener('firebase-ready', () => {
   const messagesQuery = query(messagesCollection, orderBy('time', 'desc'));
 
   // ---------- Elements ----------
-  const toggle    = document.getElementById('chatToggle');
-  const panel     = document.getElementById('chatPanel');
-  const overlay   = document.getElementById('chatOverlay');
-  const exitBtn   = document.getElementById('chatExit');
+  const toggle     = document.getElementById('chatToggle');
+  const panel      = document.getElementById('chatPanel');
+  const chatOverlay = document.getElementById('chatOverlay');
+  const exitBtn    = document.getElementById('chatExit');
   const messagesEl = document.getElementById('chatMessages');
-  const form      = document.getElementById('chatForm');
-  const nameInput = document.getElementById('chatName');
-  const textInput = document.getElementById('chatInput');
-  const adminBtn  = document.getElementById('chatAdmin');
+  const form       = document.getElementById('chatForm');
+  const nameInput  = document.getElementById('chatName');
+  const textInput  = document.getElementById('chatInput');
+  const adminBtn   = document.getElementById('chatAdmin');
 
   const loginModal  = document.getElementById('chatLogin');
   const loginInput  = document.getElementById('chatPassword');
@@ -79,9 +88,9 @@ window.addEventListener('firebase-ready', () => {
   const loginSubmit = document.getElementById('chatLoginSubmit');
   const loginCancel = document.getElementById('chatLoginCancel');
 
-  if (!toggle || !panel) return; // Widget not on this page
+  if (!toggle || !panel) return;
 
-  // ---------- Censoring & Sanitizing ----------
+  // ---------- Censoring ----------
   function censor(text) {
     let out = text;
     BANNED_WORDS.forEach(word => {
@@ -91,10 +100,10 @@ window.addEventListener('firebase-ready', () => {
     return out;
   }
 
-  // ---------- Time Formatting ----------
+  // ---------- Time ----------
   function formatTime(timestamp) {
     if (!timestamp) return 'just now';
-    const d = timestamp.toDate(); // Firestore Timestamp -> JS Date
+    const d = timestamp.toDate();
     const now = new Date();
     const sameDay = d.toDateString() === now.toDateString();
     if (sameDay) {
@@ -103,7 +112,7 @@ window.addEventListener('firebase-ready', () => {
     return d.toLocaleDateString([], { month: 'short', day: 'numeric' });
   }
 
-  // ---------- Render Messages ----------
+  // ---------- Render ----------
   async function renderMessages() {
     messagesEl.innerHTML = '<p class="chat-empty">Loading messages…</p>';
 
@@ -126,7 +135,6 @@ window.addEventListener('firebase-ready', () => {
         row.className = 'chat-msg';
         row.dataset.id = docSnap.id;
 
-        // Build structure
         row.innerHTML = `
           <div class="chat-msg-avatar">
             <img src="media/images/dove.png" alt="">
@@ -141,16 +149,14 @@ window.addEventListener('firebase-ready', () => {
           <button class="chat-msg-delete" title="Delete" aria-label="Delete message">×</button>
         `;
 
-        // Insert text safely with textContent
         row.querySelector('.chat-msg-name').textContent = msg.name;
         row.querySelector('.chat-msg-bubble').textContent = msg.text;
 
-        // Delete handler
         row.querySelector('.chat-msg-delete').addEventListener('click', async () => {
           if (!document.body.classList.contains('chat-admin-mode')) return;
           try {
             await deleteDoc(doc(db, COLLECTION_NAME, docSnap.id));
-            renderMessages(); // Re-fetch after delete
+            renderMessages();
           } catch (e) {
             console.error('Delete failed: ', e);
           }
@@ -160,7 +166,6 @@ window.addEventListener('firebase-ready', () => {
         count++;
       });
 
-      // Scroll to newest
       messagesEl.scrollTop = messagesEl.scrollHeight;
 
     } catch (error) {
@@ -169,22 +174,22 @@ window.addEventListener('firebase-ready', () => {
     }
   }
 
-  // ---------- Add Message ----------
+  // ---------- Add ----------
   async function addMessage(name, text) {
     try {
       await addDoc(messagesCollection, {
         name: censor(name.trim()).slice(0, 30) || 'Anonymous',
         text: censor(text.trim()).slice(0, 280),
-        time: serverTimestamp()  // Firebase server timestamp
+        time: serverTimestamp()
       });
-      renderMessages(); // Re-fetch to show new message
+      renderMessages();
     } catch (error) {
       console.error('Error adding message: ', error);
       alert('Sorry, your message could not be sent right now. Please try again.');
     }
   }
 
-  // ---------- Panel Open / Close ----------
+  // ---------- Panel open/close ----------
   function openPanel() {
     panel.classList.add('open');
     panel.setAttribute('aria-hidden', 'false');
@@ -204,7 +209,7 @@ window.addEventListener('firebase-ready', () => {
   });
 
   exitBtn.addEventListener('click', closePanel);
-  overlay.addEventListener('click', closePanel);
+  if (chatOverlay) chatOverlay.addEventListener('click', closePanel);
 
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && panel.classList.contains('open')) {
@@ -216,7 +221,7 @@ window.addEventListener('firebase-ready', () => {
     }
   });
 
-  // ---------- Form Submit ----------
+  // ---------- Submit ----------
   form.addEventListener('submit', e => {
     e.preventDefault();
     const name = nameInput.value.trim();
@@ -227,17 +232,15 @@ window.addEventListener('firebase-ready', () => {
     textInput.value = '';
     textInput.focus();
 
-    // Remember name for next time
     try { localStorage.setItem('divine_chat_name', name); } catch (e) {}
   });
 
-  // Prefill name if saved
   try {
     const saved = localStorage.getItem('divine_chat_name');
     if (saved) nameInput.value = saved;
   } catch (e) {}
 
-  // ---------- Admin Login ----------
+  // ---------- Admin login ----------
   function openLogin() {
     loginInput.value = '';
     loginErr.textContent = '';
