@@ -3,83 +3,109 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Divine's Portfolio</title>
+  <title>Divine Nkanga</title>
   <link rel="stylesheet" href="styles.css">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Andika&family=Risque&family=Spicy+Rice&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <!-- Mobile Menu Button -->
-  <button class="menu-toggle" id="menuToggle">☰</button>
+  
+  <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-  <!-- Overlay for Mobile -->
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAYT2QLsPc_4WuIFS4l9TR5MQuupqYU50w",
+    authDomain: "portfoliochatbot-31650.firebaseapp.com",
+    projectId: "portfoliochatbot-31650",
+    storageBucket: "portfoliochatbot-31650.firebasestorage.app",
+    messagingSenderId: "953565726375",
+    appId: "1:953565726375:web:bc3ecac91bf23b4fcbbd82",
+    measurementId: "G-431ELGLPY1"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+  <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
   <div class="overlay" id="overlay"></div>
 
-  <!-- Sidebar Navigation -->
-  <nav class="sidebar" id="sidebar">
-    <button class="close-btn" id="closeBtn">×</button>
-    <div class="sidebar-header">
-      <h2>ʚɞ Divine ʚɞ</h2>
-    </div>
-    <div class="sidebar-nav">
-      <a href="about.html" class="nav-link" data-tooltip="About">
-        <div class="nav-icon">
-          <img src="Images/about.png" alt="About" class="nav-image">
-        </div>
-      </a>
-      <a href="work.html" class="nav-link" data-tooltip="Work">
-        <div class="nav-icon">
-          <img src="Images/workpic.png" alt="Work" class="nav-image">
-        </div>
-      </a>
-      <a href="index.html" class="nav-link active" data-tooltip="Home">
-        <div class="nav-icon">
-          <img src="Images/hometv.png" alt="Home" class="nav-image">
-        </div>
-      </a>
-    </div>
-  </nav>
+  <!-- ===== Sidebar ===== -->
+  <aside class="sidebar" id="sidebar">
 
-  <!-- Main Content -->
-  <div class="content-container">
-    <div class="rounded-content-box">
-      <section id="home" class="home-content active-section">
-        <div class="home-inner">
-          <div class="home-image">
-            <img src="Images/mainpic.png" alt="Divine Portrait">
-          </div>
-          <div class="home-text">
-            <h1>Hi! I'm Divine</h1>
-            <h2>Digital Tinker</h2>
-            <p>I'm a Software Development student interested in code, art, and interactive media! This is my website — feel free to browse around!</p>
-			<br/>
-			<section>
-				<h2>My Virtual Pet</h2>
-					<p>Here's a virtual pet! Interact with it and see what happens.</p>
-				<br/>
-				<div>
-				<iframe style="width:315px;height:335px;" src="https://gifypet.neocities.org/pet/pet.html?name=Divine&dob=1753564037&gender=f&element=Water&pet=https%3A%2F%2Fmedia0.giphy.com%2Fmedia%2Fv1.Y2lkPTc5MGI3NjExYmEzdXRuNzdsYnFqeGE1aTY5aDZ6dDZlYXIxeWMzOW1odjIwd2tybiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw%2FbgVULgkgW61fZ3oY60%2Fgiphy.gif&map=town.gif&background=paper.jpg&tablecolor=%23529d32&textcolor=black">
-				</iframe>
-				</div>
-			</section>
-          </div>
+    <a href="index.html" class="nav-item active">
+      <img src="media/nav_icons/home.png" alt="Home">
+    </a>
 
+    <a href="about.html" class="nav-item">
+      <img src="media/nav_icons/about.png" alt="About">
+    </a>
+
+    <a href="work.html" class="nav-item">
+      <img src="media/nav_icons/work.png" alt="My Work">
+    </a>
+
+    <div class="lace-ribbon" aria-hidden="true"></div>
+  </aside>
+
+  <!-- ===== Paper ===== -->
+  <main class="paper-area">
+    <div class="paper">
+
+      <!-- Decorative calligraphy overlays (top-right + bottom-left) -->
+      <div class="paper-overlay paper-overlay--tr" aria-hidden="true"></div>
+      <div class="paper-overlay paper-overlay--bl" aria-hidden="true"></div>
+
+      <!-- ---------- Intro ---------- -->
+      <section class="intro">
+        <img class="intro-portrait"
+             src="media/images/Divine_home.png"
+             alt="Divine Nkanga">
+
+        <div class="intro-text">
+          <h1>Hi! I'm Divine</h1>
+
+          <p style="margin-top: 22px;">
+            I'm a <strong>Sociology and Data Analytics</strong> student at the
+            University of Illinois Chicago, with a foundation in software
+            development from College of DuPage.
+          </p>
+          <p>
+            I'm drawn to <strong>computational sociology</strong> — using data
+            to understand how people, communities, and systems shape one
+            another — and to building tools that make that understanding
+            accessible. I care about human-centered technology, social impact,
+            and the stories numbers can tell.
+          </p>
         </div>
       </section>
-	  <!-- Footer -->
-    <footer class="footer">
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/in/divinenka" target="_blank" class="social-icon linkedin" aria-label="LinkedIn"></a>
-        <a href="https://github.com/S4nri0" target="_blank" class="social-icon github" aria-label="GitHub"></a>
-        <a href="mailto:divine.nkanga1@gmail.com" class="social-icon gmail" aria-label="Gmail"></a>
-      </div>
-    </footer>
-  </div>
-    </div>
 
-    
+      <!-- ---------- Currently Studying ---------- -->
+      <section class="studying">
+        <div class="studying-text">
+          <h1>Currently Studying</h1>
+
+          <p style="margin-top: 22px;">
+            <strong>Sociology &amp; Data Analytics</strong><br>
+            University of Illinois Chicago — <em>Aug 2026 – Present</em>
+          </p>
+        </div>
+
+        <img class="rosette"
+             src="media/images/uic-rosette.png"
+             alt="University of Illinois Chicago">
+      </section>
+
+    </div>
+  </main>
 
   <script src="portfolio.js"></script>
 </body>

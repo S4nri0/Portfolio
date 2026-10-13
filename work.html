@@ -3,158 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Work | Divine's Portfolio</title>
+  <title>Divine Nkanga</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Andika&family=Risque&family=Spicy+Rice&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Mobile Menu -->
-  <button class="menu-toggle" id="menuToggle">☰</button>
+  <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
   <div class="overlay" id="overlay"></div>
 
-  <!-- Sidebar -->
-  <nav class="sidebar" id="sidebar">
-    <button class="close-btn" id="closeBtn">×</button>
-    <div class="sidebar-header">
-      <h2>ʚɞ Divine ʚɞ</h2>
-    </div>
-    <div class="sidebar-nav">
-      <a href="about.html" class="nav-link" data-tooltip="About">
-        <div class="nav-icon"><img src="Images/about.png" alt="About" class="nav-image"></div>
-      </a>
-      <a href="work.html" class="nav-link active" data-tooltip="Work">
-        <div class="nav-icon"><img src="Images/workpic.png" alt="Work" class="nav-image"></div>
-      </a>
-      <a href="index.html" class="nav-link" data-tooltip="Home">
-        <div class="nav-icon"><img src="Images/hometv.png" alt="Home" class="nav-image"></div>
-      </a>
-    </div>
-  </nav>
+  <!-- ===== Sidebar ===== -->
+  <aside class="sidebar" id="sidebar">
 
-  <!-- Main Content -->
-  <div class="content-container">
-    <div class="rounded-content-box work-content">
+    <a href="index.html" class="nav-item active">
+      <!-- SWAP: ticket-style "WHO AM I" artwork -->
+      <img src="media/nav_icons/home.png" alt="Home">
+    </a>
 
-      <!-- Resume Section -->
-      <section class="work-section resume-section">
-        <h1>My Resume</h1>
-        <p>You can view my resume below or download the PDF version:</p>
-        
-        <div class="resume-html">
-          <!-- Resume Header -->
-          <div class="resume-header">
-            <h1>Divine Nkanga</h1>
-            <h2>Software Development Student</h2>
-            <div class="contact-info">
-              <a href="mailto:divine.nkanga1@gmail.com">divine.nkanga1@gmail.com</a>
-              <a href="tel:+16308356220">+1 (630)-835-6220</a>
-              <span>2147 Blair Lane, Glendale Heights, IL 60139</span>
-            </div>
-          </div>
+    <a href="about.html" class="nav-item">
+      <!-- SWAP: ornate purple "About" wordmark -->
+      <img src="media/nav_icons/about.png" alt="About">
+    </a>
 
-          <!-- Objective -->
-          <div class="resume-section">
-            <h3>Objective</h3>
-            <p>Software development student passionate about building interactive experiences and telling stories through technology. Seeking opportunities in web design, game development, or data-driven journalism where I can apply my coding skills, creative problem-solving, and collaborative spirit to meaningful projects.</p>
-          </div>
+    <a href="work.html" class="nav-item">
+      <!-- SWAP: ornate purple "My Work" wordmark + pen -->
+      <img src="media/nav_icons/work.png" alt="My Work">
+    </a>
 
-          <!-- Experience -->
-          <div class="resume-section">
-            <h3>Experience</h3>
-            
-            <div class="resume-item">
-              <h4>Intercultural Student Assistant, Intercultural Dept., College of DuPage</h4>
-              <p class="resume-date">06/2024 – Present</p>
-              <ul>
-                <li>Designed and executed promotional materials & campaigns advancing the department's core tenets</li>
-                <li>Planned and promoted collaborative events fostering academic, social, and cross-cultural engagement</li>
-                <li>Actively engaged students, connecting them with campus resources and support services</li>
-              </ul>
-            </div>
+    <!-- Lace ribbon sits on the right edge of the sidebar -->
+    <div class="lace-ribbon" aria-hidden="true"></div>
+  </aside>
 
-            <div class="resume-item">
-              <h4>Ambassador Captain, College of DuPage</h4>
-              <p class="resume-date">08/2024 – Present</p>
-              <ul>
-                <li>Directed campus tours & recruitment events for diverse prospective student groups</li>
-                <li>Liaised between Admissions staff and ambassadors, ensuring seamless communication and event execution</li>
-                <li>Represented the college as a primary point of contact at high-profile admissions activities</li>
-              </ul>
-            </div>
+  <!-- ===== Paper ===== -->
+  <main class="paper-area">
+    <div class="paper">
 
-            <div class="resume-item">
-              <h4>AI Evaluator, Outlier AI</h4>
-              <p class="resume-date">05/2024 – 08/2024</p>
-              <ul>
-                <li>Performed routine quality assessments of AI-generated outputs against defined criteria</li>
-                <li>Maintained consistent attention to detail in a high-volume, remote workflow</li>
-              </ul>
-            </div>
-          </div>
+      <!-- ---------- Intro ---------- -->
+      <section class="intro">
+          <img src="media/images/Divine_home.png" alt="Divine Nkanga">
 
-          <!-- Education -->
-          <div class="resume-section">
-            <h3>Education</h3>
-            <div class="resume-item">
-              <h4>Software Development A.A.S, College of DuPage</h4>
-              <p class="resume-date">08/2023 – Present</p>
-              <p>My education has equipped me with essential programming and database management skills. I have earned a Microsoft Office Specialist (MOS) certification.</p>
-            </div>
-          </div>
+        <div class="intro-text">
+          <h1>Hi! I'm Divine</h1>
 
-          <!-- Skills -->
-          <div class="resume-section">
-            <h3>Skills & Abilities</h3>
-            <div class="skills-grid">
-              <div class="skill-category">
-                <h3>Technical Skills</h3>
-                <ul>
-                  <li>Web Development & Design</li>
-                  <li>Programming: Python, JavaScript, SQL</li>
-                  <li>Microsoft Office Specialist (MOS)</li>
-                </ul>
-              </div>
-              <div class="skill-category">
-                <h3>Professional Skills</h3>
-                <ul>
-                  <li>Leadership</li>
-                  <li>Event Planning & Coordination</li>
-                  <li>Cross-cultural Communication</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <p style="margin-top: 22px;">
+            I'm a <strong>Sociology and Data Analytics</strong> student at the
+            University of Illinois Chicago, with a foundation in software
+            development from College of DuPage.
+          </p>
+          <p>
+            I'm drawn to <strong>computational sociology</strong> using data
+            to understand how people, communities, and systems shape one
+            another — and to building tools that make that understanding
+            accessible. I care about human-centered technology, social impact,
+            and the stories numbers can tell.
+          </p>
+        </div>
+      </section>
 
-          <!-- Leadership -->
-          <div class="resume-section">
-            <h3>Leadership</h3>
-            <p>I actively engage in my community and campus, founding the "Fine Arts Studio" club, serving as a peer mentor for new students, and participating as a student panelist for high schoolers. I also helped organize a charity bazaar for UNICEF, in collaboration with other student orgs, that united local businesses and community organizations.</p>
-          </div>
+      <!-- ---------- Currently Studying ---------- -->
+      <section class="studying">
+        <div class="studying-text">
+          <h1>Currently Studying</h1>
+
+          <p style="margin-top: 22px;">
+            <strong>Sociology &amp; Data Analytics</strong><br>
+            University of Illinois Chicago — <em>Aug 2026 – Present</em>
+          </p>
         </div>
 
-        <a href="resume.pdf" download class="resume-download">⬇ Download Resume (PDF)</a>
+        <!-- SWAP: UIC rosette / seal -->
+        <img class="rosette" src="media/images/uic-rosette.png" alt="University of Illinois Chicago">
       </section>
 
-      <!-- Contact Section -->
-      <section class="work-section contact-section">
-        <h2>Contact Me</h2>
-        <p><strong>Email:</strong> <a href="mailto:divine.nkanga1@gmail.com">divine.nkanga1@gmail.com</a></p>
-        <p><strong>Phone:</strong> <a href="tel:+16308356220">+1 (630)-835-6220</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/divinenka" target="_blank">linkedin.com/in/divinenka</a></p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/S4nri0" target="_blank">github.com/S4nri0</a></p>
-      </section>
-		<!-- Footer -->
-    <footer class="footer">
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/in/divinenka" target="_blank" class="social-icon linkedin" aria-label="LinkedIn"></a>
-        <a href="https://github.com/S4nri0" target="_blank" class="social-icon github" aria-label="GitHub"></a>
-        <a href="mailto:divine.nkanga1@gmail.com" class="social-icon gmail" aria-label="Gmail"></a>
-      </div>
-    </footer>
-  </div>
     </div>
-	
+  </main>
+
   <script src="portfolio.js"></script>
 </body>
 </html>
