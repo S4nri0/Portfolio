@@ -54,13 +54,13 @@ document.addEventListener('keydown', e => {
 window.addEventListener('firebase-ready', () => {
 
   // ---------- Config ----------
-  const ADMIN_PASSWORD = 'dove-admin';   // ← CHANGE THIS
+  const ADMIN_PASSWORD = 'maggie303';   // ← CHANGE THIS
   const COLLECTION_NAME = 'messages';
   const MAX_MESSAGES = 50;
 
   const BANNED_WORDS = [
     'fuck', 'shit', 'bitch', 'asshole', 'bastard',
-    'damn', 'crap', 'dick', 'piss', 'slut', 'whore'
+    'damn', 'crap', 'dick', 'piss', 'slut', 'whore','nigga','nigger','faggot','kys','kill yourself','chopped','negro','monkey','gorilla'
   ];
 
   // ---------- Firebase refs ----------
