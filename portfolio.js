@@ -324,3 +324,142 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+/* ============================================================
+   ABOUT PAGE LOGIC (Gallery Filter & Photobook)
+   ============================================================ */
+document.addEventListener('DOMContentLoaded', () => {
+  
+  // ----------------------------------------------------------
+  // 1. ART GALLERY FILTER
+  // ----------------------------------------------------------
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const artItems = document.querySelectorAll('.art-item');
+
+  if (filterBtns.length > 0) {
+    // Show only "Drawings" by default on load
+    artItems.forEach(item => {
+      if (item.dataset.category === 'drawing') {
+        item.classList.add('show');
+      }
+    });
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active button styling
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filterValue = btn.dataset.filter;
+
+        // Filter items
+        artItems.forEach(item => {
+          item.classList.remove('show'); // Hide all
+          
+          if (item.dataset.category === filterValue) {
+            // Tiny delay to allow CSS animation to restart
+            setTimeout(() => {
+              item.classList.add('show');
+            }, 10);
+          }
+        });
+      });
+    });
+  }
+
+  // ----------------------------------------------------------
+  // 2. PHOTOBOOK SLIDESHOW
+  // ----------------------------------------------------------
+  const nextBtn = document.getElementById('nextBtn');
+  const prevBtn = document.getElementById('prevBtn');
+  
+  const albumPhoto1 = document.getElementById('albumPhoto1');
+  const albumPhoto2 = document.getElementById('albumPhoto2');
+  
+  const albumTitle = document.getElementById('albumTitle');
+  const albumDescription = document.getElementById('albumDescription');
+
+  if (nextBtn && albumPhoto1) {
+    const slidesData = [
+      {
+        img1: "media/images/CODscholar.jpg", 
+        img2: "media/images/CODScholar.jpg", // Using same image since you only have one
+        title: "COD Foundation Scholar Award Recipient",
+        text: "Honored to be recognized at the Scholars Award Reception. This scholarship supported my academic journey and allowed me to focus on my goals in Sociology and Data Analytics."
+      },
+      {
+        img1: "media/images/AM1.jpg",
+        img2: "media/images/AM2.jpg",
+        title: "Student Ambassador Captain",
+        text: "Led campus tours and recruitment events for diverse prospective student groups. Acted as the liaison between Admissions staff and ambassadors to ensure seamless communication, and represented College of DuPage at high-profile admissions activities."
+      },
+      {
+        img1: "media/images/BSA1.jpg",
+        img2: "media/images/BSA2.jpg",
+        title: "Black Student Alliance President",
+        text: "Spearheaded initiatives to foster community, academic support, and cultural engagement. Organized events like the Black History Month celebrations and provided a safe, empowering space for Black students on campus."
+      },
+      {
+        img1: "media/images/SF1.jpg",
+        img2: "media/images/SF2.jpg",
+        title: "STEM Forward Officer",
+        text: "Collaborated with peers to promote STEM education, networking, and hands-on learning opportunities. Helped bridge the gap between technical fields and social impact, encouraging diverse voices in STEM."
+      },
+      {
+        img1: "media/images/OL1.jpg",
+        img2: "media/images/OL2.jpg",
+        title: "Orientation Leader (Year 1)",
+        text: "Welcomed incoming students and helped them transition into college life. Facilitated group activities, answered questions, and shared resources to ensure every new student felt supported and ready to succeed."
+      },
+      {
+        img1: "media/images/FAS1.jpg",
+        img2: "media/images/FAS2.jpg",
+        title: "Fine Arts Studio Founder & Event Coordinator",
+        text: "Founded the Fine Arts Studio to provide a creative outlet for students across all majors. Designed promotional materials, organized collaborative events, and fostered a vibrant community of artists and creators."
+      }
+    ];
+
+    let currentIndex = 0;
+
+    // Apply transitions dynamically
+    albumPhoto1.style.transition = 'opacity 0.3s ease';
+    albumPhoto2.style.transition = 'opacity 0.3s ease';
+    albumTitle.style.transition = 'opacity 0.3s ease';
+    albumDescription.style.transition = 'opacity 0.3s ease';
+
+    function updateSlide(index) {
+      const slide = slidesData[index];
+      
+      // Fade out
+      albumPhoto1.style.opacity = '0';
+      albumPhoto2.style.opacity = '0';
+      albumTitle.style.opacity = '0';
+      albumDescription.style.opacity = '0';
+
+      setTimeout(() => {
+        // Update content
+        albumPhoto1.src = slide.img1;
+        albumPhoto2.src = slide.img2;
+        albumTitle.textContent = slide.title;
+        albumDescription.textContent = slide.text;
+
+        // Fade in
+        albumPhoto1.style.opacity = '1';
+        albumPhoto2.style.opacity = '1';
+        albumTitle.style.opacity = '1';
+        albumDescription.style.opacity = '1';
+      }, 300); 
+    }
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slidesData.length;
+      updateSlide(currentIndex);
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slidesData.length) % slidesData.length;
+      updateSlide(currentIndex);
+    });
+  }
+
+});
