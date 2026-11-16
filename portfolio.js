@@ -293,3 +293,34 @@ window.addEventListener('firebase-ready', () => {
   // ---------- Init ----------
   renderMessages();
 });
+
+/* ============================================================
+   CONTACT FORM LOGIC (Work Page)
+   ============================================================ */
+document.addEventListener('DOMContentLoaded', () => {
+  const contactForm = document.getElementById('contactForm');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      const myEmail = "divine.nkanga1@gmail.com";
+
+      const subject = encodeURIComponent(`Website Contact from ${name}`);
+      const body = encodeURIComponent(
+        `Name: ${name}\n` +
+        `Email: ${email}\n\n` +
+        `Message:\n${message}`
+      );
+
+      // Open default email app
+      window.location.href = `mailto:${myEmail}?subject=${subject}&body=${body}`;
+      
+      // Clear the form
+      contactForm.reset();
+    });
+  }
+});

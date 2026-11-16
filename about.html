@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Divine Nkanga</title>
+  <title>About | Divine Nkanga</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,67 +16,159 @@
 
   <!-- ===== Sidebar ===== -->
   <aside class="sidebar" id="sidebar">
-
-    <a href="index.html" class="nav-item active">
-      <!-- SWAP: ticket-style "WHO AM I" artwork -->
+    <a href="index.html" class="nav-item">
       <img src="media/nav_icons/home.png" alt="Home">
     </a>
-
-    <a href="about.html" class="nav-item">
-      <!-- SWAP: ornate purple "About" wordmark -->
+    <a href="about.html" class="nav-item active">
       <img src="media/nav_icons/about.png" alt="About">
     </a>
-
     <a href="work.html" class="nav-item">
-      <!-- SWAP: ornate purple "My Work" wordmark + pen -->
       <img src="media/nav_icons/work.png" alt="My Work">
     </a>
-
-    <!-- Lace ribbon sits on the right edge of the sidebar -->
     <div class="lace-ribbon" aria-hidden="true"></div>
   </aside>
 
-  <!-- ===== Paper ===== -->
+  <!-- ===== Paper Area ===== -->
   <main class="paper-area">
     <div class="paper">
+      
+      <div class="paper-overlay paper-overlay--tr" aria-hidden="true"></div>
+      <div class="paper-overlay paper-overlay--bl" aria-hidden="true"></div>
 
-      <!-- ---------- Intro ---------- -->
-      <section class="intro">
-          <img src="media/images/Divine_home.png" alt="Divine Nkanga">
+      <!-- ===== About Page Content ===== -->
+      <div class="about-content-wrapper">
+        
+        <!-- Top Intro -->
+        <section class="about-intro">
+          <h1>Once Upon a Time...</h1>
+          <p>Get to know the face behind the data. Here's a look at my journey, the communities I've built, and the clubs I've had the honor of leading.</p>
+        </section>
 
-        <div class="intro-text">
-          <h1>Hi! I'm Divine</h1>
+        <!-- ===== ARTIST'S CORNER ===== -->
+        <section class="artists-corner">
+          
+          <div class="artist-header">
+            <div class="artist-photo-frame">
+              <!-- Your profile photo -->
+              <img src="media/images/divine-art-photo.jpg" alt="Divine Nkanga">
+            </div>
+            <div class="artist-intro">
+              <h2>Artist's Corner</h2>
+              <p>This is my art. A collection of my sketches, ceramics, and written thoughts.</p>
+            </div>
+          </div>
 
-          <p style="margin-top: 22px;">
-            I'm a <strong>Sociology and Data Analytics</strong> student at the
-            University of Illinois Chicago, with a foundation in software
-            development from College of DuPage.
-          </p>
-          <p>
-            I'm drawn to <strong>computational sociology</strong> using data
-            to understand how people, communities, and systems shape one
-            another — and to building tools that make that understanding
-            accessible. I care about human-centered technology, social impact,
-            and the stories numbers can tell.
-          </p>
-        </div>
-      </section>
+          <!-- Filter Buttons -->
+          <div class="gallery-filters">
+            <button class="filter-btn active" data-filter="drawing">Drawings</button>
+            <button class="filter-btn" data-filter="ceramic">Ceramics</button>
+            <button class="filter-btn" data-filter="writing">Writing</button>
+          </div>
 
-      <!-- ---------- Currently Studying ---------- -->
-      <section class="studying">
-        <div class="studying-text">
-          <h1>Currently Studying</h1>
+          <!-- The Gallery Grid -->
+          <div class="art-gallery">
+            
+            <!-- DRAWINGS & PAINTINGS -->
+            <div class="art-item" data-category="drawing">
+              <div class="polaroid">
+                <img src="media/images/sketch.jpg" alt="Pencil sketch with swirls">
+              </div>
+            </div>
+            <div class="art-item" data-category="drawing">
+              <div class="polaroid">
+                <img src="media/images/spring-summer.jpg" alt="Spring into Summer Painting">
+              </div>
+            </div>
+            <div class="art-item" data-category="drawing">
+              <div class="polaroid">
+                <img src="media/images/orange-profile.jpg" alt="Orange hair profile">
+              </div>
+            </div>
+            <div class="art-item" data-category="drawing">
+              <div class="polaroid">
+                <img src="media/images/digital-portrait.jpg" alt="Digital Painting">
+              </div>
+            </div>
 
-          <p style="margin-top: 22px;">
-            <strong>Sociology &amp; Data Analytics</strong><br>
-            University of Illinois Chicago — <em>Aug 2026 – Present</em>
-          </p>
-        </div>
+            <!-- CERAMICS -->
+            <div class="art-item" data-category="ceramic">
+              <div class="polaroid">
+                <img src="media/images/mug.jpg" alt="Face Mug">
+              </div>
+            </div>
+            <div class="art-item" data-category="ceramic">
+              <div class="polaroid">
+                <img src="media/images/owl-side.jpg" alt="Owl Sculpture Side">
+              </div>
+            </div>
+            <div class="art-item" data-category="ceramic">
+              <div class="polaroid">
+                <img src="media/images/owl-front.jpg" alt="Owl Sculpture Front">
+              </div>
+            </div>
+            <div class="art-item" data-category="ceramic">
+              <div class="polaroid">
+                <img src="media/images/camera-angle.jpg" alt="Police Box Camera Angle">
+              </div>
+            </div>
+            <div class="art-item" data-category="ceramic">
+              <div class="polaroid">
+                <img src="media/images/camera-side.jpg" alt="Police Box Camera Side">
+              </div>
+            </div>
+            <div class="art-item" data-category="ceramic">
+              <div class="polaroid">
+                <img src="media/images/dino.jpg" alt="Dinosaur Sculpture">
+              </div>
+            </div>
 
-        <!-- SWAP: UIC rosette / seal -->
-        <img class="rosette" src="media/images/uic-rosette.png" alt="University of Illinois Chicago">
-      </section>
+            <!-- WRITING (Poem Placeholder) -->
+            <div class="art-item" data-category="writing">
+              <div class="poem-card">
+                <div class="poem-tape"></div>
+                <h3>Title of Poem</h3>
+                <p>
+                  Here is where your poem text will go.<br>
+                  It sits perfectly on this vintage paper,<br>
+                  waiting to be read.<br><br>
+                  You can add as many lines as you need,<br>
+                  and the paper will stretch to fit.<br>
+                  - Divine
+                </p>
+              </div>
+            </div>
 
+          </div>
+        </section>
+
+        <!-- ===== THE PHOTOBOOK ===== -->
+        <section class="photobook-section">
+          
+          <!-- Left Side: Photo & Spiral -->
+          <div class="photobook-container">
+            <div class="spiral-binding"></div>
+            <div class="photo-frame" id="photoFrame">
+              <img id="albumPhoto1" src="media/images/Scholar_Award.jpg" alt="Divine's College Journey">
+              <img id="albumPhoto2" src="media/images/Scholar_Award.jpg" alt="Divine's College Journey">
+            </div>
+            <div class="album-controls">
+              <button id="prevBtn" class="album-btn prev">Prev</button>
+              <button id="nextBtn" class="album-btn next">Next</button>
+            </div>
+          </div>
+
+          <!-- Right Side: Information -->
+          <div class="album-info">
+            <h2 id="albumTitle">COD Foundation Scholar Award Recipient</h2>
+            <div class="album-divider"></div>
+            <p id="albumDescription">
+              Honored to be recognized at the Scholars Award Reception. This scholarship supported my academic journey and allowed me to focus on my goals in Sociology and Data Analytics.
+            </p>
+          </div>
+
+        </section>
+
+      </div>
     </div>
   </main>
 
