@@ -14,34 +14,22 @@
   <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
   <div class="overlay" id="overlay"></div>
 
-  <!-- ===== Sidebar ===== -->
   <aside class="sidebar" id="sidebar">
-    <a href="index.html" class="nav-item active">
-      <img src="media/nav_icons/home.png" alt="Home">
-    </a>
-    <a href="about.html" class="nav-item">
-      <img src="media/nav_icons/about.png" alt="About">
-    </a>
-    <a href="work.html" class="nav-item">
-      <img src="media/nav_icons/work.png" alt="My Work">
-    </a>
+    <a href="index.html" class="nav-item active"><img src="media/nav_icons/home.png" alt="Home"></a>
+    <a href="about.html" class="nav-item"><img src="media/nav_icons/about.png" alt="About"></a>
+    <a href="work.html" class="nav-item"><img src="media/nav_icons/work.png" alt="My Work"></a>
     <div class="lace-ribbon" aria-hidden="true"></div>
   </aside>
 
-  <!-- ===== Paper Area ===== -->
   <main class="paper-area">
     <div class="paper">
-
       <div class="paper-overlay paper-overlay--tr" aria-hidden="true"></div>
       <div class="paper-overlay paper-overlay--bl" aria-hidden="true"></div>
 
-      <!-- ---------- Intro ---------- -->
       <section class="intro">
         <img class="intro-portrait" src="media/images/Divine_home.png" loading="lazy" decoding="async" alt="Divine Nkanga">
-
         <div class="intro-text">
           <h1>Hi! I'm Divine</h1>
-          <div class="heading-divider"><img src="media/images/divider.png" alt="Divider"></div>
           <p style="margin-top: 22px;">
             I'm a <strong>Sociology and Data Analytics</strong> student at the
             University of Illinois Chicago, with a foundation in software
@@ -57,11 +45,9 @@
         </div>
       </section>
 
-      <!-- ---------- Currently Studying ---------- -->
       <section class="studying">
         <div class="studying-text">
           <h1>Currently Studying</h1>
-          <div class="heading-divider"><img src="media/images/divider.png" alt="Divider"></div>
           <p style="margin-top: 22px;">
             <strong>Sociology &amp; Data Analytics</strong><br>
             University of Illinois Chicago — <em>Aug 2026 – Present</em>
@@ -69,11 +55,9 @@
         </div>
         <img class="rosette" src="media/images/uic-rosette.png" loading="lazy" decoding="async" alt="University of Illinois Chicago">
       </section>
-
     </div>
   </main>
 
-  <!-- ===== Chat Widget ===== -->
   <button class="chat-toggle" id="chatToggle" aria-label="Open message board">
     <img src="media/images/dove.png" loading="lazy" decoding="async" alt="">
   </button>
@@ -101,7 +85,6 @@
     </form>
   </section>
 
-  <!-- ===== Admin login modal ===== -->
   <div class="chat-login" id="chatLogin" aria-hidden="true">
     <div class="chat-login-box">
       <h4>Admin Login</h4>
@@ -116,8 +99,7 @@
 
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
-    import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, query, orderBy, serverTimestamp }
-      from "https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js";
+    import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyAYT2QLsPc_4WuIFS4l9TR5MQuupqYU50w",
@@ -130,12 +112,7 @@
     };
 
     const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-
-    window.firebaseChat = {
-      db, collection, addDoc, getDocs, deleteDoc, doc, query, orderBy, serverTimestamp
-    };
-
+    window.firebaseChat = { db: getFirestore(app), collection, addDoc, getDocs, deleteDoc, doc, query, orderBy, serverTimestamp };
     window.dispatchEvent(new Event('firebase-ready'));
   </script>
 
