@@ -14,30 +14,60 @@
   <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
   <div class="overlay" id="overlay"></div>
 
-  <!-- ===== Sidebar ===== -->
   <aside class="sidebar" id="sidebar">
-    <a href="index.html" class="nav-item">
-      <img src="media/nav_icons/home.png" alt="Home">
-    </a>
-    <a href="about.html" class="nav-item">
-      <img src="media/nav_icons/about.png" alt="About">
-    </a>
-    <a href="work.html" class="nav-item active">
-      <img src="media/nav_icons/work.png" alt="My Work">
-    </a>
+    <a href="index.html" class="nav-item"><img src="media/nav_icons/home.png" alt="Home"></a>
+    <a href="about.html" class="nav-item"><img src="media/nav_icons/about.png" alt="About"></a>
+    <a href="work.html" class="nav-item active"><img src="media/nav_icons/work.png" alt="My Work"></a>
     <div class="lace-ribbon" aria-hidden="true"></div>
   </aside>
 
-  <!-- ===== Paper Area ===== -->
   <main class="paper-area">
     <div class="paper">
       
       <div class="paper-overlay paper-overlay--tr" aria-hidden="true"></div>
       <div class="paper-overlay paper-overlay--bl" aria-hidden="true"></div>
 
-      <!-- ===== Work Page Content ===== -->
       <div class="work-content-wrapper">
         
+        <!-- PROJECTS SECTION -->
+        <section class="projects-section">
+          <h2 class="section-title">Projects & Research</h2>
+          <p class="section-subtitle">A look at what I've been building and exploring.</p>
+          
+          <div class="projects-grid">
+            
+            <!-- TEMPLATE: Copy and paste this block for each new project -->
+            <a href="YOUR_LINK_HERE" target="_blank" class="project-card">
+              <div class="project-image">
+                <!-- Replace with your actual preview image -->
+                <img src="media/images/project-preview.jpg" loading="lazy" decoding="async" alt="Project Preview">
+              </div>
+              <div class="project-content">
+                <h3>Project Title</h3>
+                <p>Add a short description of the project, what tools you used, or what you learned.</p>
+              </div>
+            </a>
+            <!-- END TEMPLATE -->
+
+            <!-- Second Card Example -->
+            <a href="YOUR_LINK_HERE" target="_blank" class="project-card">
+              <div class="project-image">
+                <img src="media/images/project-preview.jpg" loading="lazy" decoding="async" alt="Project Preview">
+              </div>
+              <div class="project-content">
+                <h3>Another Project</h3>
+                <p>Another brief description goes right here. Clicking the card will take the user to the link.</p>
+              </div>
+            </a>
+
+          </div>
+        </section>
+
+        <!-- Image Divider -->
+        <div class="image-divider">
+          <img src="media/images/divider.png" loading="lazy" decoding="async" alt="Floral Divider">
+        </div>
+
         <!-- RESUME SECTION -->
         <section class="resume-section">
           <div class="lace-frame-container">
@@ -165,6 +195,11 @@
           </div>
         </section>
 
+        <!-- Image Divider -->
+        <div class="image-divider">
+          <img src="media/images/divider.png" loading="lazy" decoding="async" alt="Floral Divider">
+        </div>
+
         <!-- CONTACT FORM SECTION -->
         <section class="contact-section">
           <h2>Send a Note</h2>
@@ -194,7 +229,6 @@
     </div>
   </main>
 
-  <!-- Note: No Firebase scripts here! This makes the page load much faster. -->
   <script src="portfolio.js"></script>
 </body>
 </html>

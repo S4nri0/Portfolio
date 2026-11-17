@@ -14,40 +14,29 @@
   <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
   <div class="overlay" id="overlay"></div>
 
-  <!-- ===== Sidebar ===== -->
   <aside class="sidebar" id="sidebar">
-    <a href="index.html" class="nav-item">
-      <img src="media/nav_icons/home.png" alt="Home">
-    </a>
-    <a href="about.html" class="nav-item active">
-      <img src="media/nav_icons/about.png" alt="About">
-    </a>
-    <a href="work.html" class="nav-item">
-      <img src="media/nav_icons/work.png" alt="My Work">
-    </a>
+    <a href="index.html" class="nav-item"><img src="media/nav_icons/home.png" alt="Home"></a>
+    <a href="about.html" class="nav-item active"><img src="media/nav_icons/about.png" alt="About"></a>
+    <a href="work.html" class="nav-item"><img src="media/nav_icons/work.png" alt="My Work"></a>
     <div class="lace-ribbon" aria-hidden="true"></div>
   </aside>
 
-  <!-- ===== Paper Area ===== -->
   <main class="paper-area">
     <div class="paper">
-      
       <div class="paper-overlay paper-overlay--tr" aria-hidden="true"></div>
       <div class="paper-overlay paper-overlay--bl" aria-hidden="true"></div>
 
       <div class="about-content-wrapper">
         
-        <!-- Top Intro -->
         <section class="about-intro">
           <h1>Once Upon a Time...</h1>
           <p>Get to know the person behind the data. Here is a look at my artwork, my involvement, and my journey.</p>
         </section>
 
-        <!-- ===== ARTIST'S CORNER ===== -->
         <section class="artists-corner">
           <div class="artist-header">
             <div class="artist-photo-frame">
-              <img src="media/images/divine-art-photo.jpg" alt="Divine Nkanga">
+              <img src="media/images/divine-art-photo.jpg" loading="lazy" decoding="async" alt="Divine Nkanga">
             </div>
             <div class="artist-intro">
               <h2>Artist's Corner</h2>
@@ -55,210 +44,55 @@
             </div>
           </div>
 
-          <!-- Filter Buttons -->
           <div class="gallery-filters">
             <button class="filter-btn active" data-filter="drawing">Drawings</button>
             <button class="filter-btn" data-filter="ceramic">Ceramics</button>
             <button class="filter-btn" data-filter="writing">Writing</button>
           </div>
 
-          <!-- The Gallery Grid -->
           <div class="art-gallery">
-            <!-- DRAWINGS -->
-            <div class="art-item" data-category="drawing">
-              <div class="polaroid"><img src="media/images/sketch.jpg" alt="Pencil sketch"></div>
-            </div>
-            <div class="art-item" data-category="drawing">
-              <div class="polaroid"><img src="media/images/spring-summer.jpg" alt="Spring into Summer"></div>
-            </div>
-            <div class="art-item" data-category="drawing">
-              <div class="polaroid"><img src="media/images/orange-profile.jpg" alt="Orange profile"></div>
-            </div>
-            <div class="art-item" data-category="drawing">
-              <div class="polaroid"><img src="media/images/digital-portrait.jpg" alt="Digital portrait"></div>
-            </div>
+            <div class="art-item" data-category="drawing"><div class="polaroid"><img src="media/images/sketch.jpg" loading="lazy" decoding="async" alt="Pencil sketch"></div></div>
+            <div class="art-item" data-category="drawing"><div class="polaroid"><img src="media/images/spring-summer.jpg" loading="lazy" decoding="async" alt="Spring into Summer"></div></div>
+            <div class="art-item" data-category="drawing"><div class="polaroid"><img src="media/images/orange-profile.jpg" loading="lazy" decoding="async" alt="Orange profile"></div></div>
+            <div class="art-item" data-category="drawing"><div class="polaroid"><img src="media/images/digital-portrait.jpg" loading="lazy" decoding="async" alt="Digital portrait"></div></div>
 
-            <!-- CERAMICS -->
-            <div class="art-item" data-category="ceramic">
-              <div class="polaroid"><img src="media/images/mug.jpg" alt="Face Mug"></div>
-            </div>
-            <div class="art-item" data-category="ceramic">
-              <div class="polaroid"><img src="media/images/owl-side.jpg" alt="Owl side"></div>
-            </div>
-            <div class="art-item" data-category="ceramic">
-              <div class="polaroid"><img src="media/images/owl-front.jpg" alt="Owl front"></div>
-            </div>
-            <div class="art-item" data-category="ceramic">
-              <div class="polaroid"><img src="media/images/camera-angle.jpg" alt="Camera angle"></div>
-            </div>
-            <div class="art-item" data-category="ceramic">
-              <div class="polaroid"><img src="media/images/camera-side.jpg" alt="Camera side"></div>
-            </div>
-            <div class="art-item" data-category="ceramic">
-              <div class="polaroid"><img src="media/images/dino.jpg" alt="Dinosaur"></div>
-            </div>
+            <div class="art-item" data-category="ceramic"><div class="polaroid"><img src="media/images/mug.jpg" loading="lazy" decoding="async" alt="Face Mug"></div></div>
+            <div class="art-item" data-category="ceramic"><div class="polaroid"><img src="media/images/owl-side.jpg" loading="lazy" decoding="async" alt="Owl side"></div></div>
+            <div class="art-item" data-category="ceramic"><div class="polaroid"><img src="media/images/owl-front.jpg" loading="lazy" decoding="async" alt="Owl front"></div></div>
+            <div class="art-item" data-category="ceramic"><div class="polaroid"><img src="media/images/camera-angle.jpg" loading="lazy" decoding="async" alt="Camera angle"></div></div>
+            <div class="art-item" data-category="ceramic"><div class="polaroid"><img src="media/images/camera-side.jpg" loading="lazy" decoding="async" alt="Camera side"></div></div>
+            <div class="art-item" data-category="ceramic"><div class="polaroid"><img src="media/images/dino.jpg" loading="lazy" decoding="async" alt="Dinosaur"></div></div>
 
-            <!-- WRITING -->
             <div class="art-item" data-category="writing">
               <div class="poem-card">
                 <div class="poem-tape"></div>
                 <h3>Title of Poem</h3>
-                <p>
-                  Here is where your poem text will go.<br>
-                  It sits perfectly on this vintage paper,<br>
-                  waiting to be read.<br><br>
-                  You can add as many lines as you need,<br>
-                  and the paper will stretch to fit.<br>
-                  - Divine
-                </p>
+                <p>Here is where your poem text will go.<br>It sits perfectly on this vintage paper,<br>waiting to be read.<br><br>You can add as many lines as you need,<br>and the paper will stretch to fit.<br>- Divine</p>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- ===== FULL WIDTH CONNECTED FLORAL SVG ===== -->
-        <div class="svg-divider">
-          <svg viewBox="0 0 1440 120" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <!-- Gradient for the petals -->
-              <linearGradient id="petalGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="var(--pink)" />
-                <stop offset="100%" stop-color="var(--pink-deep)" />
-              </linearGradient>
-            </defs>
-
-            <!-- Background Swirls (Pink) -->
-            <path d="M -50 60 C 100 120, 200 0, 350 60 C 400 80, 450 80, 500 60" stroke="var(--pink-deep)" fill="none" stroke-width="1.5" opacity="0.6"/>
-            <path d="M 1490 60 C 1340 120, 1240 0, 1090 60 C 1040 80, 990 80, 940 60" stroke="var(--pink-deep)" fill="none" stroke-width="1.5" opacity="0.6"/>
-            <path d="M 100 40 Q 150 10 200 50 T 300 40 T 400 50" stroke="var(--pink-deep)" fill="none" stroke-width="1" opacity="0.4"/>
-            <path d="M 1340 40 Q 1290 10 1240 50 T 1140 40 T 1040 50" stroke="var(--pink-deep)" fill="none" stroke-width="1" opacity="0.4"/>
-
-            <!-- Main Green Vines -->
-            <!-- Left Vine -->
-            <path d="M -20 70 Q 150 70 300 60 Q 450 50 600 70 Q 650 80 700 60" stroke="var(--sage-deep)" fill="none" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M 150 65 Q 180 30 220 60 Q 180 90 150 65 Z" fill="var(--sage-deep)" opacity="0.8"/>
-            <path d="M 350 55 Q 380 20 420 55 Q 380 80 350 55 Z" fill="var(--sage-deep)" opacity="0.8"/>
-            <path d="M 550 65 Q 580 100 620 70 Q 580 40 550 65 Z" fill="var(--sage-deep)" opacity="0.8"/>
-            
-            <!-- Right Vine -->
-            <path d="M 1460 70 Q 1290 70 1140 60 Q 990 50 840 70 Q 790 80 740 60" stroke="var(--sage-deep)" fill="none" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M 1290 65 Q 1260 30 1220 60 Q 1260 90 1290 65 Z" fill="var(--sage-deep)" opacity="0.8"/>
-            <path d="M 1090 55 Q 1060 20 1020 55 Q 1060 80 1090 55 Z" fill="var(--sage-deep)" opacity="0.8"/>
-            <path d="M 890 65 Q 860 100 820 70 Q 860 40 890 65 Z" fill="var(--sage-deep)" opacity="0.8"/>
-
-            <!-- Little Leaves and Berries -->
-            <circle cx="250" cy="45" r="3" fill="var(--pink-deep)"/>
-            <circle cx="450" cy="80" r="2" fill="var(--pink-deep)"/>
-            <circle cx="650" cy="50" r="3" fill="var(--pink-deep)"/>
-            <circle cx="1190" cy="45" r="3" fill="var(--pink-deep)"/>
-            <circle cx="990" cy="80" r="2" fill="var(--pink-deep)"/>
-            <circle cx="790" cy="50" r="3" fill="var(--pink-deep)"/>
-
-            <!-- CENTER LOTUS FLOWER (Detailed) -->
-            <g transform="translate(720, 60)">
-              <!-- Back Leaves -->
-              <path d="M -60 20 Q -120 -20 -150 30 Q -90 40 -60 20 Z" fill="var(--sage-deep)" opacity="0.6"/>
-              <path d="M 60 20 Q 120 -20 150 30 Q 90 40 60 20 Z" fill="var(--sage-deep)" opacity="0.6"/>
-              
-              <!-- Outer Petals -->
-              <path d="M -10 20 C -60 0, -70 -50, -30 -70 C -10 -80, 0 -50, 0 10 Z" fill="url(#petalGradient)" stroke="var(--purple-deep)" stroke-width="1.5"/>
-              <path d="M 10 20 C 60 0, 70 -50, 30 -70 C 10 -80, 0 -50, 0 10 Z" fill="url(#petalGradient)" stroke="var(--purple-deep)" stroke-width="1.5"/>
-              
-              <!-- Mid Petals -->
-              <path d="M -5 15 C -40 -10, -40 -60, -15 -75 C 0 -80, 5 -40, 0 10 Z" fill="var(--pink)" stroke="var(--purple-deep)" stroke-width="1.2" opacity="0.9"/>
-              <path d="M 5 15 C 40 -10, 40 -60, 15 -75 C 0 -80, -5 -40, 0 10 Z" fill="var(--pink)" stroke="var(--purple-deep)" stroke-width="1.2" opacity="0.9"/>
-              
-              <!-- Center Petal -->
-              <path d="M 0 10 C -20 -20, -20 -70, 0 -90 C 20 -70, 20 -20, 0 10 Z" fill="var(--pink-deep)" stroke="var(--purple-deep)" stroke-width="1.5"/>
-              
-              <!-- Flower Details -->
-              <circle cx="0" cy="-10" r="3" fill="var(--purple-deep)"/>
-              <circle cx="-15" cy="-30" r="2" fill="var(--purple-deep)" opacity="0.6"/>
-              <circle cx="15" cy="-30" r="2" fill="var(--purple-deep)" opacity="0.6"/>
-              <circle cx="0" cy="-50" r="2" fill="var(--purple-deep)" opacity="0.6"/>
-            </g>
-            
-            <!-- Connecting Swirls to the center -->
-            <path d="M 650 60 C 680 20, 700 20, 720 40" stroke="var(--pink-deep)" fill="none" stroke-width="1.5"/>
-            <path d="M 790 60 C 760 20, 740 20, 720 40" stroke="var(--pink-deep)" fill="none" stroke-width="1.5"/>
-          </svg>
+        <div class="image-divider">
+          <img src="media/images/divider.png" loading="lazy" decoding="async" alt="Floral Divider">
         </div>
 
-        <!-- ===== UIC INVOLVEMENT ===== -->
         <section class="uic-involvement">
           <div class="section-header">
             <h2>Involvement at UIC</h2>
             <p>Coming soon. A look at my community building and leadership at the University of Illinois Chicago.</p>
           </div>
-          <div class="uic-content-placeholder">
-            <!-- Future UIC involvement details go here -->
-          </div>
+          <div class="uic-content-placeholder"></div>
         </section>
 
-        <!-- ===== FULL WIDTH CONNECTED FLORAL SVG ===== -->
-        <div class="svg-divider">
-          <svg viewBox="0 0 1440 120" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="petalGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="var(--pink)" />
-                <stop offset="100%" stop-color="var(--pink-deep)" />
-              </linearGradient>
-            </defs>
-
-            <!-- Background Swirls -->
-            <path d="M -50 60 C 100 120, 200 0, 350 60 C 400 80, 450 80, 500 60" stroke="var(--pink-deep)" fill="none" stroke-width="1.5" opacity="0.6"/>
-            <path d="M 1490 60 C 1340 120, 1240 0, 1090 60 C 1040 80, 990 80, 940 60" stroke="var(--pink-deep)" fill="none" stroke-width="1.5" opacity="0.6"/>
-            <path d="M 100 40 Q 150 10 200 50 T 300 40 T 400 50" stroke="var(--pink-deep)" fill="none" stroke-width="1" opacity="0.4"/>
-            <path d="M 1340 40 Q 1290 10 1240 50 T 1140 40 T 1040 50" stroke="var(--pink-deep)" fill="none" stroke-width="1" opacity="0.4"/>
-
-            <!-- Main Green Vines -->
-            <path d="M -20 70 Q 150 70 300 60 Q 450 50 600 70 Q 650 80 700 60" stroke="var(--sage-deep)" fill="none" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M 150 65 Q 180 30 220 60 Q 180 90 150 65 Z" fill="var(--sage-deep)" opacity="0.8"/>
-            <path d="M 350 55 Q 380 20 420 55 Q 380 80 350 55 Z" fill="var(--sage-deep)" opacity="0.8"/>
-            <path d="M 550 65 Q 580 100 620 70 Q 580 40 550 65 Z" fill="var(--sage-deep)" opacity="0.8"/>
-            
-            <path d="M 1460 70 Q 1290 70 1140 60 Q 990 50 840 70 Q 790 80 740 60" stroke="var(--sage-deep)" fill="none" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M 1290 65 Q 1260 30 1220 60 Q 1260 90 1290 65 Z" fill="var(--sage-deep)" opacity="0.8"/>
-            <path d="M 1090 55 Q 1060 20 1020 55 Q 1060 80 1090 55 Z" fill="var(--sage-deep)" opacity="0.8"/>
-            <path d="M 890 65 Q 860 100 820 70 Q 860 40 890 65 Z" fill="var(--sage-deep)" opacity="0.8"/>
-
-            <circle cx="250" cy="45" r="3" fill="var(--pink-deep)"/>
-            <circle cx="450" cy="80" r="2" fill="var(--pink-deep)"/>
-            <circle cx="650" cy="50" r="3" fill="var(--pink-deep)"/>
-            <circle cx="1190" cy="45" r="3" fill="var(--pink-deep)"/>
-            <circle cx="990" cy="80" r="2" fill="var(--pink-deep)"/>
-            <circle cx="790" cy="50" r="3" fill="var(--pink-deep)"/>
-
-            <!-- CENTER LOTUS FLOWER -->
-            <g transform="translate(720, 60)">
-              <path d="M -60 20 Q -120 -20 -150 30 Q -90 40 -60 20 Z" fill="var(--sage-deep)" opacity="0.6"/>
-              <path d="M 60 20 Q 120 -20 150 30 Q 90 40 60 20 Z" fill="var(--sage-deep)" opacity="0.6"/>
-              
-              <path d="M -10 20 C -60 0, -70 -50, -30 -70 C -10 -80, 0 -50, 0 10 Z" fill="url(#petalGradient)" stroke="var(--purple-deep)" stroke-width="1.5"/>
-              <path d="M 10 20 C 60 0, 70 -50, 30 -70 C 10 -80, 0 -50, 0 10 Z" fill="url(#petalGradient)" stroke="var(--purple-deep)" stroke-width="1.5"/>
-              
-              <path d="M -5 15 C -40 -10, -40 -60, -15 -75 C 0 -80, 5 -40, 0 10 Z" fill="var(--pink)" stroke="var(--purple-deep)" stroke-width="1.2" opacity="0.9"/>
-              <path d="M 5 15 C 40 -10, 40 -60, 15 -75 C 0 -80, -5 -40, 0 10 Z" fill="var(--pink)" stroke="var(--purple-deep)" stroke-width="1.2" opacity="0.9"/>
-              
-              <path d="M 0 10 C -20 -20, -20 -70, 0 -90 C 20 -70, 20 -20, 0 10 Z" fill="var(--pink-deep)" stroke="var(--purple-deep)" stroke-width="1.5"/>
-              
-              <circle cx="0" cy="-10" r="3" fill="var(--purple-deep)"/>
-              <circle cx="-15" cy="-30" r="2" fill="var(--purple-deep)" opacity="0.6"/>
-              <circle cx="15" cy="-30" r="2" fill="var(--purple-deep)" opacity="0.6"/>
-              <circle cx="0" cy="-50" r="2" fill="var(--purple-deep)" opacity="0.6"/>
-            </g>
-            
-            <path d="M 650 60 C 680 20, 700 20, 720 40" stroke="var(--pink-deep)" fill="none" stroke-width="1.5"/>
-            <path d="M 790 60 C 760 20, 740 20, 720 40" stroke="var(--pink-deep)" fill="none" stroke-width="1.5"/>
-          </svg>
+        <div class="image-divider">
+          <img src="media/images/divider.png" loading="lazy" decoding="async" alt="Floral Divider">
         </div>
 
-        <!-- ===== THE PHOTOBOOK (COD INVOLVEMENT) ===== -->
         <section class="photobook-section">
-          
           <div class="photobook-container">
             <div class="photo-frame" id="photoFrame">
-              <img id="albumPhoto" src="media/images/Scholar_Award.jpg" alt="Divine's College Journey">
+              <img id="albumPhoto" src="media/images/CODscholar.jpg" loading="lazy" decoding="async" alt="Divine's College Journey">
             </div>
             <div class="album-controls">
               <button id="prevBtn" class="album-btn prev">Prev</button>
@@ -269,11 +103,8 @@
           <div class="album-info">
             <h2 id="albumTitle">COD Foundation Scholar Award Recipient</h2>
             <div class="album-divider"></div>
-            <p id="albumDescription">
-              Received the COD Foundation Scholarship.
-            </p>
+            <p id="albumDescription">Received the COD Foundation Scholarship.</p>
           </div>
-
         </section>
 
       </div>

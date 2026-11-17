@@ -44,10 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const artItems = document.querySelectorAll('.art-item');
   
   if (filterBtns.length > 0) {
-    // Init Gallery
     artItems.forEach(item => { if (item.dataset.category === 'drawing') item.classList.add('show'); });
     
-    // Filter logic
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         filterBtns.forEach(b => b.classList.remove('active'));
@@ -61,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Photobook Slideshow
   const nextBtn = document.getElementById('nextBtn');
   const prevBtn = document.getElementById('prevBtn');
   const albumPhoto = document.getElementById('albumPhoto');
