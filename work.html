@@ -194,24 +194,7 @@
     </div>
   </main>
 
-  <!-- ===== Firebase (Optional on this page, but keeps scripts consistent) ===== -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
-    import { getFirestore } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js";
-    
-    const firebaseConfig = {
-      apiKey: "AIzaSyAYT2QLsPc_4WuIFS4l9TR5MQuupqYU50w",
-      authDomain: "portfoliochatbot-31650.firebaseapp.com",
-      projectId: "portfoliochatbot-31650",
-      storageBucket: "portfoliochatbot-31650.firebasestorage.app",
-      messagingSenderId: "953565726375",
-      appId: "1:953565726375:web:bc3ecac91bf23b4fcbbd82"
-    };
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-    window.firebaseChat = { db }; // Minimal exposure just in case
-  </script>
-
+  <!-- Note: No Firebase scripts here! This makes the page load much faster. -->
   <script src="portfolio.js"></script>
 </body>
 </html>

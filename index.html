@@ -16,23 +16,19 @@
 
   <!-- ===== Sidebar ===== -->
   <aside class="sidebar" id="sidebar">
-
     <a href="index.html" class="nav-item active">
       <img src="media/nav_icons/home.png" alt="Home">
     </a>
-
     <a href="about.html" class="nav-item">
       <img src="media/nav_icons/about.png" alt="About">
     </a>
-
     <a href="work.html" class="nav-item">
       <img src="media/nav_icons/work.png" alt="My Work">
     </a>
-
     <div class="lace-ribbon" aria-hidden="true"></div>
   </aside>
 
-  <!-- ===== Paper ===== -->
+  <!-- ===== Paper Area ===== -->
   <main class="paper-area">
     <div class="paper">
 
@@ -41,13 +37,10 @@
 
       <!-- ---------- Intro ---------- -->
       <section class="intro">
-        <img class="intro-portrait"
-             src="media/images/Divine_home.png"
-             alt="Divine Nkanga">
+        <img class="intro-portrait" src="media/images/Divine_home.png" loading="lazy" decoding="async" alt="Divine Nkanga">
 
         <div class="intro-text">
           <h1>Hi! I'm Divine</h1>
-
           <p style="margin-top: 22px;">
             I'm a <strong>Sociology and Data Analytics</strong> student at the
             University of Illinois Chicago, with a foundation in software
@@ -67,16 +60,12 @@
       <section class="studying">
         <div class="studying-text">
           <h1>Currently Studying</h1>
-
           <p style="margin-top: 22px;">
             <strong>Sociology &amp; Data Analytics</strong><br>
             University of Illinois Chicago — <em>Aug 2026 – Present</em>
           </p>
         </div>
-
-        <img class="rosette"
-             src="media/images/uic-rosette.png"
-             alt="University of Illinois Chicago">
+        <img class="rosette" src="media/images/uic-rosette.png" loading="lazy" decoding="async" alt="University of Illinois Chicago">
       </section>
 
     </div>
@@ -84,7 +73,7 @@
 
   <!-- ===== Chat Widget ===== -->
   <button class="chat-toggle" id="chatToggle" aria-label="Open message board">
-    <img src="media/images/dove.png" alt="">
+    <img src="media/images/dove.png" loading="lazy" decoding="async" alt="">
   </button>
 
   <div class="chat-overlay" id="chatOverlay"></div>
@@ -92,7 +81,7 @@
   <section class="chat-panel" id="chatPanel" aria-hidden="true">
     <header class="chat-header">
       <div class="chat-title">
-        <img class="chat-title-bird" src="media/images/dove.png" alt="">
+        <img class="chat-title-bird" src="media/images/dove.png" loading="lazy" decoding="async" alt="">
         <h3>Message Board</h3>
       </div>
       <div class="chat-header-actions">
@@ -123,7 +112,7 @@
     </div>
   </div>
 
-  <!-- ===== Firebase ===== -->
+  <!-- ===== Firebase (Only needed on Home page for the chat) ===== -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
     import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, query, orderBy, serverTimestamp }
@@ -142,12 +131,10 @@
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
-    // Expose Firestore helpers to portfolio.js
     window.firebaseChat = {
       db, collection, addDoc, getDocs, deleteDoc, doc, query, orderBy, serverTimestamp
     };
 
-    // Tell portfolio.js that Firebase is ready
     window.dispatchEvent(new Event('firebase-ready'));
   </script>
 
