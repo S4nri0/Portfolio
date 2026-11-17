@@ -1,121 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Divine Nkanga</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divine Nkanga</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
+  </head>
+  <body>
 
-  <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
-  <div class="overlay" id="overlay"></div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+    <div class="overlay" id="overlay"></div>
 
-  <aside class="sidebar" id="sidebar">
-    <a href="index.html" class="nav-item active"><img src="media/nav_icons/home.png" alt="Home"></a>
-    <a href="about.html" class="nav-item"><img src="media/nav_icons/about.png" alt="About"></a>
-    <a href="work.html" class="nav-item"><img src="media/nav_icons/work.png" alt="My Work"></a>
-    <div class="lace-ribbon" aria-hidden="true"></div>
-  </aside>
+    <aside class="sidebar" id="sidebar">
+      <a href="index.html" class="nav-item active"><img src="media/nav_icons/home.png" alt="Home"></a>
+      <a href="about.html" class="nav-item"><img src="media/nav_icons/about.png" alt="About"></a>
+      <a href="work.html" class="nav-item"><img src="media/nav_icons/work.png" alt="My Work"></a>
+      <div class="lace-ribbon" aria-hidden="true"></div>
+    </aside>
 
-  <main class="paper-area">
-    <div class="paper">
-      <div class="paper-overlay paper-overlay--tr" aria-hidden="true"></div>
-      <div class="paper-overlay paper-overlay--bl" aria-hidden="true"></div>
+    <main class="paper-area">
+      <div class="paper">
+        <div class="paper-overlay paper-overlay--tr" aria-hidden="true"></div>
+        <div class="paper-overlay paper-overlay--bl" aria-hidden="true"></div>
 
-      <section class="intro">
-        <img class="intro-portrait" src="media/images/Divine_home.png" loading="lazy" decoding="async" alt="Divine Nkanga">
-        <div class="intro-text">
-          <h1>Hi! I'm Divine</h1>
-          <p style="margin-top: 22px;">
-            I'm a <strong>Sociology and Data Analytics</strong> student at the
-            University of Illinois Chicago, with a foundation in software
-            development from College of DuPage.
-          </p>
-          <p>
-            I'm drawn to <strong>computational sociology</strong> — using data
-            to understand how people, communities, and systems shape one
-            another — and to building tools that make that understanding
-            accessible. I care about human-centered technology, social impact,
-            and the stories numbers can tell.
-          </p>
+        <section class="intro">
+          <img class="intro-portrait" src="media/images/Divine_home.png" loading="lazy" decoding="async" alt="Divine Nkanga">
+          <div class="intro-text">
+            <h1>Hi! I'm Divine</h1>
+            <p style="margin-top: 22px;">
+              I'm a <strong>Sociology and Data Analytics</strong> student at the
+              University of Illinois Chicago, with a foundation in software
+              development from College of DuPage.
+            </p>
+            <p>
+              I'm drawn to <strong>computational sociology</strong> — using data
+              to understand how people, communities, and systems shape one
+              another — and to building tools that make that understanding
+              accessible. I care about human-centered technology, social impact,
+              and the stories numbers can tell.
+            </p>
+          </div>
+        </section>
+
+        <section class="studying">
+          <div class="studying-text">
+            <h1>Currently Studying</h1>
+            <p style="margin-top: 22px;">
+              <strong>Sociology &amp; Data Analytics</strong><br>
+              University of Illinois Chicago — <em>Aug 2026 – Present</em>
+            </p>
+          </div>
+          <img class="rosette" src="media/images/uic-rosette.png" loading="lazy" decoding="async" alt="University of Illinois Chicago">
+        </section>
+      </div>
+    </main>
+
+    <button class="chat-toggle" id="chatToggle" aria-label="Open message board">
+      <img src="media/images/dove.png" loading="lazy" decoding="async" alt="">
+    </button>
+
+    <div class="chat-overlay" id="chatOverlay"></div>
+
+    <section class="chat-panel" id="chatPanel" aria-hidden="true">
+      <header class="chat-header">
+        <div class="chat-title">
+          <img class="chat-title-bird" src="media/images/dove.png" loading="lazy" decoding="async" alt="">
+          <h3>Message Board</h3>
         </div>
-      </section>
-
-      <section class="studying">
-        <div class="studying-text">
-          <h1>Currently Studying</h1>
-          <p style="margin-top: 22px;">
-            <strong>Sociology &amp; Data Analytics</strong><br>
-            University of Illinois Chicago — <em>Aug 2026 – Present</em>
-          </p>
+        <div class="chat-header-actions">
+          <button class="chat-admin" id="chatAdmin" title="Admin login" aria-label="Admin login">🔒</button>
+          <button class="chat-exit" id="chatExit" aria-label="Close message board">×</button>
         </div>
-        <img class="rosette" src="media/images/uic-rosette.png" loading="lazy" decoding="async" alt="University of Illinois Chicago">
-      </section>
-    </div>
-  </main>
+      </header>
 
-  <button class="chat-toggle" id="chatToggle" aria-label="Open message board">
-    <img src="media/images/dove.png" loading="lazy" decoding="async" alt="">
-  </button>
+      <div class="chat-messages" id="chatMessages" aria-live="polite"></div>
 
-  <div class="chat-overlay" id="chatOverlay"></div>
+      <form class="chat-form" id="chatForm" autocomplete="off">
+        <input class="chat-name" id="chatName" type="text" placeholder="Your name" maxlength="30" required>
+        <input class="chat-input" id="chatInput" type="text" placeholder="Leave a message…" maxlength="280" required>
+        <button class="chat-send" type="submit" aria-label="Send">Send</button>
+      </form>
+    </section>
 
-  <section class="chat-panel" id="chatPanel" aria-hidden="true">
-    <header class="chat-header">
-      <div class="chat-title">
-        <img class="chat-title-bird" src="media/images/dove.png" loading="lazy" decoding="async" alt="">
-        <h3>Message Board</h3>
-      </div>
-      <div class="chat-header-actions">
-        <button class="chat-admin" id="chatAdmin" title="Admin login" aria-label="Admin login">🔒</button>
-        <button class="chat-exit" id="chatExit" aria-label="Close message board">×</button>
-      </div>
-    </header>
-
-    <div class="chat-messages" id="chatMessages" aria-live="polite"></div>
-
-    <form class="chat-form" id="chatForm" autocomplete="off">
-      <input class="chat-name" id="chatName" type="text" placeholder="Your name" maxlength="30" required>
-      <input class="chat-input" id="chatInput" type="text" placeholder="Leave a message…" maxlength="280" required>
-      <button class="chat-send" type="submit" aria-label="Send">Send</button>
-    </form>
-  </section>
-
-  <div class="chat-login" id="chatLogin" aria-hidden="true">
-    <div class="chat-login-box">
-      <h4>Admin Login</h4>
-      <input type="password" id="chatPassword" placeholder="Password" autocomplete="off">
-      <p class="chat-login-error" id="chatLoginError"></p>
-      <div class="chat-login-actions">
-        <button type="button" id="chatLoginCancel">Cancel</button>
-        <button type="button" id="chatLoginSubmit">Enter</button>
+    <div class="chat-login" id="chatLogin" aria-hidden="true">
+      <div class="chat-login-box">
+        <h4>Admin Login</h4>
+        <input type="password" id="chatPassword" placeholder="Password" autocomplete="off">
+        <p class="chat-login-error" id="chatLoginError"></p>
+        <div class="chat-login-actions">
+          <button type="button" id="chatLoginCancel">Cancel</button>
+          <button type="button" id="chatLoginSubmit">Enter</button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
-    import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js";
+    <script type="module">
+      import {
+        initializeApp
+      } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+        getDocs,
+        deleteDoc,
+        doc,
+        query,
+        orderBy,
+        serverTimestamp
+      } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js";
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyAYT2QLsPc_4WuIFS4l9TR5MQuupqYU50w",
-      authDomain: "portfoliochatbot-31650.firebaseapp.com",
-      projectId: "portfoliochatbot-31650",
-      storageBucket: "portfoliochatbot-31650.firebasestorage.app",
-      messagingSenderId: "953565726375",
-      appId: "1:953565726375:web:bc3ecac91bf23b4fcbbd82",
-      measurementId: "G-431ELGLPY1"
-    };
+      const firebaseConfig = {
+        apiKey: "AIzaSyAYT2QLsPc_4WuIFS4l9TR5MQuupqYU50w",
+        authDomain: "portfoliochatbot-31650.firebaseapp.com",
+        projectId: "portfoliochatbot-31650",
+        storageBucket: "portfoliochatbot-31650.firebasestorage.app",
+        messagingSenderId: "953565726375",
+        appId: "1:953565726375:web:bc3ecac91bf23b4fcbbd82",
+        measurementId: "G-431ELGLPY1"
+      };
 
-    const app = initializeApp(firebaseConfig);
-    window.firebaseChat = { db: getFirestore(app), collection, addDoc, getDocs, deleteDoc, doc, query, orderBy, serverTimestamp };
-    window.dispatchEvent(new Event('firebase-ready'));
-  </script>
+      const app = initializeApp(firebaseConfig);
+      window.firebaseChat = {
+        db: getFirestore(app),
+        collection,
+        addDoc,
+        getDocs,
+        deleteDoc,
+        doc,
+        query,
+        orderBy,
+        serverTimestamp
+      };
+      window.dispatchEvent(new Event('firebase-ready'));
+    </script>
 
-  <script src="portfolio.js"></script>
-</body>
+    <script src="portfolio.js"></script>
+  </body>
 </html>

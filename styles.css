@@ -194,7 +194,7 @@ a {
 }
 
 /* ============================================================
-   TYPOGRAPHY & GLOBAL ELEMENTS (Divider Fixed)
+   TYPOGRAPHY & GLOBAL ELEMENTS (Divider Fixed & Enlarged)
    ============================================================ */
 h1,
 h2,
@@ -214,11 +214,10 @@ h1 {
   font-weight: bold;
   position: relative;
   display: inline-block;
-  font-size: clamp(3rem, 6vw, 80px);
+  font-size: 80px;
   letter-spacing: 0.01em;
-  padding-bottom: 35px;
-  min-width: 250px;
-  /* Ensures short text still has a nice divider width */
+  padding-bottom: 20px;
+  min-width: 300px;
 }
 
 h1::after {
@@ -227,9 +226,10 @@ h1::after {
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 25px;
-  /* Centered alignment fixes the offset */
-  background: url('media/images/divider.png') no-repeat center bottom / contain;
+  height: 40px;
+  /* Increased from 25px to 40px */
+  /* Centered alignment with full width */
+  background: url('media/images/divider.png') no-repeat center bottom / 100% 100%;
   pointer-events: none;
 }
 
