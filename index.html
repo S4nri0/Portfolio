@@ -30,7 +30,7 @@
           <img class="intro-portrait" src="media/images/Divine_home.png" loading="lazy" decoding="async" alt="Divine Nkanga">
           <div class="intro-text">
             <h1>Hi! I'm Divine</h1>
-            <p style="margin-top: 22px;">
+            <p>
               I'm a <strong>Sociology and Data Analytics</strong> student. Minoring in <strong>Management Information systems</strong> at the
               University of Illinois Chicago, with a background in software
               development from College of DuPage.
@@ -47,9 +47,9 @@
         <section class="studying">
           <div class="studying-text">
             <h1>Currently Studying</h1>
-            <p style="margin-top: 22px;">
+            <p>
               <strong>Sociology &amp; Data Analytics, </strong><br>
-            University of Illinois Chicago — <em>Aug 2026 – Present</em>
+              University of Illinois Chicago — <em>Aug 2026 – Present</em>
             </p>
           </div>
           <img class="rosette" src="media/images/uic-rosette.png" loading="lazy" decoding="async" alt="University of Illinois Chicago">
@@ -57,11 +57,10 @@
       </div>
     </main>
 
+    <!-- CHAT WIDGET -->
     <button class="chat-toggle" id="chatToggle" aria-label="Open message board">
-      <img src="media/images/dove.png" loading="lazy" decoding="async" alt="">
+      <img src="media/images/dove.png" loading="lazy" decoding="async" alt="Message Bird">
     </button>
-
-    <div class="chat-overlay" id="chatOverlay"></div>
 
     <section class="chat-panel" id="chatPanel" aria-hidden="true">
       <header class="chat-header">
@@ -70,7 +69,7 @@
           <h3>Message Board</h3>
         </div>
         <div class="chat-header-actions">
-          <button class="chat-admin" id="chatAdmin" title="Admin login" aria-label="Admin login">🔒</button>
+          <!-- Admin button removed -->
           <button class="chat-exit" id="chatExit" aria-label="Close message board">×</button>
         </div>
       </header>
@@ -84,18 +83,7 @@
       </form>
     </section>
 
-    <div class="chat-login" id="chatLogin" aria-hidden="true">
-      <div class="chat-login-box">
-        <h4>Admin Login</h4>
-        <input type="password" id="chatPassword" placeholder="Password" autocomplete="off">
-        <p class="chat-login-error" id="chatLoginError"></p>
-        <div class="chat-login-actions">
-          <button type="button" id="chatLoginCancel">Cancel</button>
-          <button type="button" id="chatLoginSubmit">Enter</button>
-        </div>
-      </div>
-    </div>
-
+    <!-- Firebase Config -->
     <script type="module">
       import {
         initializeApp
@@ -134,6 +122,8 @@
         orderBy,
         serverTimestamp
       };
+
+      // Tell the script that Firebase is loaded
       window.dispatchEvent(new Event('firebase-ready'));
     </script>
 

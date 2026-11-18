@@ -10,119 +10,123 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
   </head>
   <body>
-
-    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+    <button class="menu-toggle" id="menuToggle">☰</button>
     <div class="overlay" id="overlay"></div>
-
     <aside class="sidebar" id="sidebar">
       <a href="index.html" class="nav-item"><img src="media/nav_icons/home.png" alt="Home"></a>
       <a href="about.html" class="nav-item active"><img src="media/nav_icons/about.png" alt="About"></a>
       <a href="work.html" class="nav-item"><img src="media/nav_icons/work.png" alt="My Work"></a>
-      <div class="lace-ribbon" aria-hidden="true"></div>
+      <div class="lace-ribbon"></div>
     </aside>
 
     <main class="paper-area">
       <div class="paper">
-        <div class="paper-overlay paper-overlay--tr" aria-hidden="true"></div>
-        <div class="paper-overlay paper-overlay--bl" aria-hidden="true"></div>
+        <div class="paper-overlay paper-overlay--tr"></div>
+        <div class="paper-overlay paper-overlay--bl"></div>
 
-        <div class="about-content-wrapper">
+        <div class="content-wrapper">
 
-          <section class="about-intro">
-            <h1>About Me</h1>
-            <p>Get to know the person.</p>
+          <!-- Intro & Hobbies -->
+          <section class="background-hobbies">
+            <div class="background-text">
+              <h1>Divine</h1>
+              <p>I am a Chicago-based student passionate about data, sociology, and community building. Outside of my academic work, I dabble in art and writing; I love exploring different mediums, from ceramics and sculpture to sketches and creative writing.</p>
+              <p>I come from a family of immigrants from the Democratic Republic of Congo! I've lived in the Chicagoland suburbs most of my life.</p>
+              <p>When I'm not studying or making art, I enjoy exploring the city, trying new coffee shops, and crafting with friends. Here are a few snapshots of my life!</p>
+            </div>
+            <div class="hobbies-slideshow-wrapper">
+              <div class="hobbies-slideshow" id="hobbiesSlideshow">
+                <img src="media/images/Divine1.jpg" class="active" alt="Hobby Photo">
+                <img src="media/images/hobby-2.jpg" alt="Hobby Photo">
+                <img src="media/images/hobby-3.jpg" alt="Hobby Photo">
+              </div>
+            </div>
           </section>
 
+          <div class="image-divider"><img src="media/images/divider.png" alt="Divider"></div>
+
+          <!-- Artist's Corner Carousel -->
           <section class="artists-corner">
             <div class="artist-header">
-              <div class="artist-photo-frame">
-                <img src="media/images/divine-art-photo.jpg" loading="lazy" decoding="async" alt="Divine Nkanga">
-              </div>
+              <div class="artist-photo-frame"><img src="media/images/divine-art-photo.jpg" alt="Divine Nkanga"></div>
               <div class="artist-intro">
-                <h2>Artist's Corner</h2>
-                <p>A collection of my sketches, ceramics, and writing.</p>
+                <h1>Artist's Corner</h1>
+                <p>Explore my portfolio one piece at a time.</p>
               </div>
             </div>
 
-            <div class="gallery-filters">
-              <button class="filter-btn active" data-filter="drawing">Drawings</button>
-              <button class="filter-btn" data-filter="ceramic">Ceramics</button>
-              <button class="filter-btn" data-filter="writing">Writing</button>
+            <div class="art-filters">
+              <button class="filter-btn active" data-category="drawing">Drawings</button>
+              <button class="filter-btn" data-category="ceramic">Ceramics</button>
+              <button class="filter-btn" data-category="writing">Writing</button>
             </div>
 
-            <div class="art-gallery">
-              <div class="art-item" data-category="drawing">
-                <div class="polaroid"><img src="media/images/sketch.jpg" loading="lazy" decoding="async" alt="Pencil sketch"></div>
-              </div>
-              <div class="art-item" data-category="drawing">
-                <div class="polaroid"><img src="media/images/spring-summer.jpg" loading="lazy" decoding="async" alt="Spring into Summer"></div>
-              </div>
-              <div class="art-item" data-category="drawing">
-                <div class="polaroid"><img src="media/images/orange-profile.jpg" loading="lazy" decoding="async" alt="Orange profile"></div>
-              </div>
-              <div class="art-item" data-category="drawing">
-                <div class="polaroid"><img src="media/images/digital-portrait.jpg" loading="lazy" decoding="async" alt="Digital portrait"></div>
-              </div>
+            <!-- Carousel Container -->
+            <div class="carousel-container">
+              <button class="carousel-btn prev" id="artPrev">❮</button>
+              <div class="carousel-track" id="artTrack">
 
-              <div class="art-item" data-category="ceramic">
-                <div class="polaroid"><img src="media/images/mug.jpg" loading="lazy" decoding="async" alt="Face Mug"></div>
-              </div>
-              <div class="art-item" data-category="ceramic">
-                <div class="polaroid"><img src="media/images/owl-side.jpg" loading="lazy" decoding="async" alt="Owl side"></div>
-              </div>
-              <div class="art-item" data-category="ceramic">
-                <div class="polaroid"><img src="media/images/owl-front.jpg" loading="lazy" decoding="async" alt="Owl front"></div>
-              </div>
-              <div class="art-item" data-category="ceramic">
-                <div class="polaroid"><img src="media/images/camera-angle.jpg" loading="lazy" decoding="async" alt="Camera angle"></div>
-              </div>
-              <div class="art-item" data-category="ceramic">
-                <div class="polaroid"><img src="media/images/camera-side.jpg" loading="lazy" decoding="async" alt="Camera side"></div>
-              </div>
-              <div class="art-item" data-category="ceramic">
-                <div class="polaroid"><img src="media/images/dino.jpg" loading="lazy" decoding="async" alt="Dinosaur"></div>
-              </div>
-
-              <div class="art-item" data-category="writing">
-                <div class="poem-card">
-                  <div class="poem-tape"></div>
-                  <h3>Title of Poem</h3>
-                  <p>Here is where your poem text will go.<br>It sits perfectly on this vintage paper,<br>waiting to be read.<br><br>You can add as many lines as you need,<br>and the paper will stretch to fit.<br>- Divine</p>
+                <!-- Drawing Items -->
+                <div class="carousel-slide art-item" data-category="drawing">
+                  <div class="art-viewer"><img src="media/images/sketch.jpg" alt="Pencil sketch"></div>
                 </div>
+                <div class="carousel-slide art-item" data-category="drawing">
+                  <div class="art-viewer"><img src="media/images/spring-summer.jpg" alt="Spring into Summer"></div>
+                </div>
+                <div class="carousel-slide art-item" data-category="drawing">
+                  <div class="art-viewer"><img src="media/images/orange-profile.jpg" alt="Orange profile"></div>
+                </div>
+                <div class="carousel-slide art-item" data-category="drawing">
+                  <div class="art-viewer"><img src="media/images/digital-portrait.jpg" alt="Digital portrait"></div>
+                </div>
+
+                <!-- Ceramic Items -->
+                <div class="carousel-slide art-item" data-category="ceramic">
+                  <div class="art-viewer"><img src="media/images/mug.jpg" alt="Face Mug"></div>
+                </div>
+                <div class="carousel-slide art-item" data-category="ceramic">
+                  <div class="art-viewer"><img src="media/images/owl-side.jpg" alt="Owl side"></div>
+                </div>
+                <div class="carousel-slide art-item" data-category="ceramic">
+                  <div class="art-viewer"><img src="media/images/dino.jpg" alt="Dinosaur"></div>
+                </div>
+
+                <!-- Writing Items -->
+                <div class="carousel-slide art-item" data-category="writing">
+                  <div class="art-viewer">
+                    <div class="poem-card">
+                      <h3>Title of Poem</h3>
+                      <p>Here is where your poem text will go.<br>It sits perfectly on this vintage paper.</p>
+                    </div>
+                  </div>
+                </div>
+
               </div>
+              <button class="carousel-btn next" id="artNext">❯</button>
             </div>
           </section>
 
-          <div class="image-divider">
-            <img src="media/images/divider.png" loading="lazy" decoding="async" alt="Floral Divider">
-          </div>
+          <div class="image-divider"><img src="media/images/divider.png" alt="Divider"></div>
 
+          <!-- UIC Involvement -->
           <section class="uic-involvement">
-            <div class="section-header">
-              <h2>Involvement at UIC</h2>
-              <p>Coming soon. A look at my community building and leadership at the University of Illinois Chicago.</p>
-            </div>
-            <div class="uic-content-placeholder"></div>
+            <h2>Involvement at UIC</h2>
+            <p>Coming soon. A look at my community building and leadership at the University of Illinois Chicago.</p>
           </section>
 
-          <div class="image-divider">
-            <img src="media/images/divider.png" loading="lazy" decoding="async" alt="Floral Divider">
-          </div>
+          <div class="image-divider"><img src="media/images/divider.png" alt="Divider"></div>
 
+          <!-- Photobook Slideshow -->
           <section class="photobook-section">
             <div class="photobook-container">
               <div class="photo-frame" id="photoFrame">
-                <img id="albumPhoto" src="media/images/CODscholar.jpg" loading="lazy" decoding="async" alt="Divine's College Journey">
+                <img id="albumPhoto" src="media/images/CODscholar.jpg" alt="Divine's College Journey">
               </div>
-              <div class="album-controls">
-                <button id="prevBtn" class="album-btn prev">Prev</button>
-                <button id="nextBtn" class="album-btn next">Next</button>
-              </div>
+              <button id="prevBtn" class="album-btn prev">Prev</button>
+              <button id="nextBtn" class="album-btn next">Next</button>
             </div>
-
             <div class="album-info">
               <h2 id="albumTitle">COD Foundation Scholar Award Recipient</h2>
-              <div class="album-divider"></div>
               <p id="albumDescription">Received the COD Foundation Scholarship.</p>
             </div>
           </section>
@@ -130,7 +134,6 @@
         </div>
       </div>
     </main>
-
     <script src="portfolio.js"></script>
   </body>
 </html>
