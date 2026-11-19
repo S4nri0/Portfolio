@@ -108,7 +108,6 @@ a {
   transform: translateY(-3px) rotate(-2deg);
 }
 
-/* FIXED: Using width: auto to prevent clipping */
 .paper-area {
   margin-left: var(--sidebar-width);
   width: auto;
@@ -120,7 +119,6 @@ a {
   scrollbar-gutter: stable;
 }
 
-/* FIXED: Increased padding so headings never clip with the corners */
 .paper {
   background: var(--paper);
   border-radius: 26px;
@@ -135,43 +133,42 @@ a {
   overflow: hidden;
 }
 
-/* FIXED: Forcing images into the exact corners to remove odd spacing */
+/* Toned down corners so they don't block text */
 .paper::before,
 .paper::after {
   content: '';
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   background-size: 100% 100%;
-  /* Stretches exactly to the box */
   background-repeat: no-repeat;
   pointer-events: none;
   z-index: 0;
+  opacity: 0.85;
 }
 
 .paper::before {
   top: 0;
   left: 0;
   background-image: url('media/images/tltp.png');
-  background-position: top left;
 }
 
 .paper::after {
   bottom: 0;
   right: 0;
   background-image: url('media/images/brtp.png');
-  background-position: bottom right;
 }
 
+/* Toned down writing overlay */
 .paper-overlay {
   position: absolute;
-  width: 360px;
-  height: 360px;
+  width: 260px;
+  height: 260px;
   pointer-events: none;
   z-index: 0;
   background: url('media/images/writing.png') no-repeat;
   background-size: cover;
-  opacity: 0.28;
+  opacity: 0.15;
   mix-blend-mode: multiply;
 }
 
@@ -203,6 +200,15 @@ a {
   gap: 3rem;
 }
 
+.work-content-wrapper {
+  max-width: 850px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-bottom: 2rem;
+}
+
 /* ============================================================
    TYPOGRAPHY
    ============================================================ */
@@ -224,7 +230,6 @@ h1 {
   font-weight: bold;
   display: block;
   font-size: clamp(3.5rem, 6vw, 85px);
-  /* Slightly adjusted so it fits well */
   letter-spacing: 0.01em;
   line-height: 1.2;
   margin-bottom: 2rem;
@@ -251,7 +256,6 @@ strong {
   font-weight: 600;
 }
 
-/* Explicit Page Divider */
 .image-divider {
   width: 100%;
   max-width: 600px;
@@ -267,7 +271,7 @@ strong {
 }
 
 /* ============================================================
-   HOME PAGE LAYOUT
+   HOME PAGE
    ============================================================ */
 .intro {
   display: flex;
@@ -315,27 +319,30 @@ strong {
 }
 
 /* ============================================================
-   CAROUSEL SYSTEM
+   CAROUSEL SYSTEM (FIXED SPACING)
    ============================================================ */
 .carousel-container {
   position: relative;
   width: 100%;
-  overflow: hidden;
   border-radius: 8px;
 }
 
 .carousel-track {
   display: flex;
   transition: transform 0.4s ease-in-out;
+  align-items: flex-start;
 }
 
+/* Align to top */
 .carousel-slide {
   min-width: 100%;
   padding: 1rem;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
+
+/* Items align to top */
 
 .carousel-btn {
   position: absolute;
@@ -362,90 +369,100 @@ strong {
 }
 
 .carousel-btn.prev {
-  left: 10px;
+  left: -10px;
 }
 
 .carousel-btn.next {
-  right: 10px;
+  right: -10px;
 }
 
-.project-card {
-  display: flex;
-  flex-direction: column;
-  background: var(--cream);
-  border-radius: 8px;
-  border: 1px solid #e0d8cd;
-  overflow: hidden;
-  max-width: 500px;
-  width: 100%;
-  box-shadow: 2px 4px 10px rgba(90, 80, 60, 0.05);
-}
-
-.project-image {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  background: var(--sage);
-  border-bottom: 1px dashed var(--ink-soft);
-}
-
-.project-content {
-  padding: 1.2rem;
-  text-align: center;
-}
-
-.art-filters {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.filter-btn {
-  background: transparent;
-  color: var(--ink);
-  border: 2px solid var(--purple);
-  padding: 8px 20px;
-  border-radius: 20px;
-  font-family: var(--font-body);
-  cursor: pointer;
-  transition: all var(--t);
-}
-
-.filter-btn:hover,
-.filter-btn.active {
-  background: var(--purple);
-  color: #fff;
-}
-
+/* Art Viewer */
 .art-viewer {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  max-width: 100%;
 }
 
 .art-viewer img {
-  max-height: 500px;
+  max-height: 450px;
   width: auto;
   max-width: 100%;
   border: 12px solid #fff;
   box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.15);
   border-radius: 2px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
+/* Art Captions */
+.art-caption {
+  margin-top: 1rem;
+  font-family: var(--font-body);
+  text-align: center;
+}
+
+.art-caption h4 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--purple-deep);
+  margin-bottom: 0.2rem;
+}
+
+.art-caption p {
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* Poem Card */
 .art-viewer .poem-card {
-  max-width: 500px;
+  width: 100%;
+  max-width: 600px;
   padding: 2rem;
   font-family: 'Courier New', monospace;
   background: var(--cream);
   border: 1px solid #e0d8cd;
+  text-align: left;
+}
+
+.poem-card h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.poem-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* ============================================================
+   ABOUT PAGE LAYOUT
+   ============================================================ */
+.background-hobbies {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.background-text {
+  flex: 1 1 300px;
+}
+
+.hobbies-slideshow-wrapper {
+  flex: 1 1 300px;
+  width: 100%;
+  max-width: 560px;
 }
 
 .hobbies-slideshow {
   position: relative;
   width: 100%;
-  height: 300px;
+  aspect-ratio: 4/3;
+  min-height: 240px;
   border-radius: 8px;
   overflow: hidden;
   border: 6px solid #fff;
@@ -467,8 +484,124 @@ strong {
   opacity: 1;
 }
 
+.artist-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.artist-photo-frame {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid lavender;
+  transform: rotate(-3deg);
+  overflow: hidden;
+}
+
+.artist-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Art Filters */
+.art-filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: transparent;
+  color: var(--ink);
+  border: 2px solid var(--purple);
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all var(--t);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--purple);
+  color: #fff;
+}
+
+/* Photobook (Fixed to fit inside purple lines) */
+.photobook-section {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.photobook-container {
+  position: relative;
+  flex: 0 1 450px;
+  max-width: 450px;
+  aspect-ratio: 1.4 / 1;
+  background: url('media/images/photobook.png') no-repeat center / 100% 100%;
+}
+
+/* Cropped to fit exactly inside the purple border */
+.photo-frame {
+  position: absolute;
+  top: 11.5%;
+  left: 17%;
+  right: 7%;
+  bottom: 12%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.album-btn {
+  position: absolute;
+  bottom: 2%;
+  background: var(--sage-deep);
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.album-btn.prev {
+  left: 5%;
+}
+
+.album-btn.next {
+  right: 5%;
+}
+
+.album-info {
+  flex: 1 1 350px;
+  background: var(--cream);
+  padding: 2.5rem;
+  border-radius: 8px;
+  border: 1px dashed var(--purple-deep);
+}
+
 /* ============================================================
-   WORK PAGE & ABOUT PAGE
+   WORK PAGE
    ============================================================ */
 .resume-section {
   display: flex;
@@ -543,10 +676,46 @@ strong {
   margin-bottom: 1rem;
 }
 
+/* Project Cards */
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--cream);
+  border-radius: 8px;
+  border: 1px solid #e0d8cd;
+  overflow: hidden;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 2px 4px 10px rgba(90, 80, 60, 0.05);
+}
+
+.project-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--sage);
+  border-bottom: 1px dashed var(--ink-soft);
+}
+
+.project-content {
+  padding: 1.2rem;
+  text-align: center;
+}
+
+/* Contact Form (Centered) */
 .contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   max-width: 500px;
   margin: 0 auto;
-  width: 100%;
 }
 
 .contact-section h2 {
@@ -554,9 +723,17 @@ strong {
 }
 
 .vintage-form {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  align-items: stretch;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .vintage-form label {
@@ -567,12 +744,14 @@ strong {
 
 .vintage-form input,
 .vintage-form textarea {
+  width: 100%;
   background: transparent;
   border: none;
   border-bottom: 2px solid var(--pink-deep);
   padding: 0.5rem 0;
   font-family: var(--font-body);
   font-size: 1.1rem;
+  text-align: center;
 }
 
 .vintage-form input:focus {
@@ -592,120 +771,16 @@ strong {
   cursor: pointer;
   border-radius: 4px;
   box-shadow: 3px 3px 0 var(--purple-deep);
+  width: 100%;
+  margin-top: 1rem;
 }
 
 .submit-btn:hover {
   background: var(--purple-deep);
 }
 
-.background-hobbies {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.background-text {
-  flex: 1 1 300px;
-}
-
-.background-text h2 {
-  margin-bottom: 1rem;
-}
-
-.hobbies-slideshow-wrapper {
-  flex: 1 1 300px;
-}
-
-.artist-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.artist-photo-frame {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border-width: 3px;
-  border-color: lavender;
-  transform: rotate(-3deg);
-  overflow: hidden;
-}
-
-.artist-photo-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.photobook-section {
-  display: flex;
-  gap: 3rem;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.photobook-container {
-  position: relative;
-  flex: 0 1 400px;
-  max-width: 400px;
-  aspect-ratio: 1.4 / 1;
-  background: url('media/images/photobook.png') no-repeat center / contain;
-}
-
-.photo-frame {
-  position: absolute;
-  top: 9.5%;
-  left: 19%;
-  right: 5.5%;
-  bottom: 11%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.photo-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: opacity 0.3s ease;
-}
-
-.album-btn {
-  position: absolute;
-  bottom: 4%;
-  background: var(--sage-deep);
-  color: #fff;
-  border: none;
-  padding: 8px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.album-btn.prev {
-  left: 5%;
-}
-
-.album-btn.next {
-  right: 5%;
-}
-
-.album-info {
-  flex: 1 1 350px;
-  background: var(--cream);
-  padding: 2.5rem;
-  border-radius: 8px;
-  border: 1px dashed var(--purple-deep);
-}
-
 /* ============================================================
-   CHAT WIDGET
+   CHAT WIDGET (FIXED)
    ============================================================ */
 .chat-toggle {
   position: fixed;
@@ -766,6 +841,28 @@ strong {
   border-bottom: 1px dashed var(--ink-soft);
   padding-bottom: 8px;
   margin-bottom: 8px;
+  align-items: center;
+}
+
+.chat-header h3 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.chat-admin,
+.chat-exit {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--purple-deep);
+}
+
+.chat-admin.unlocked {
+  background: var(--sage-deep);
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 6px;
 }
 
 .chat-messages {
@@ -774,6 +871,7 @@ strong {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding-right: 5px;
 }
 
 .chat-msg-bubble {
@@ -781,19 +879,29 @@ strong {
   padding: 8px 12px;
   border-radius: 12px;
   font-size: 0.9rem;
+  word-break: break-word;
 }
 
+/* Fixed Form Layout */
 .chat-form {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   margin-top: 8px;
+  width: 100%;
 }
 
 .chat-form input {
   flex: 1;
+  min-width: 0;
   padding: 8px;
   border: 1px solid var(--pink-deep);
   border-radius: 15px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+}
+
+.chat-name {
+  max-width: 80px;
 }
 
 .chat-form button {
@@ -802,10 +910,49 @@ strong {
   border: none;
   border-radius: 15px;
   padding: 8px 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.chat-login {
+  position: fixed;
+  inset: 0;
+  background: rgba(40, 30, 20, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2100;
+}
+
+.chat-login.open {
+  display: flex;
+}
+
+.chat-login-box {
+  background: var(--paper);
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid var(--pink-deep);
+  width: 300px;
+  text-align: center;
+}
+
+.chat-login-box input {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  border: 1px solid var(--pink-deep);
+  border-radius: 4px;
+}
+
+.chat-login-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
 }
 
 /* ============================================================
-   MOBILE RESPONSIVE
+   MOBILE RESPONSIVE & TYPOGRAPHY ADJUSTMENTS
    ============================================================ */
 @media (max-width: 900px) {
   body {
@@ -864,15 +1011,41 @@ strong {
   .paper-area {
     margin-left: 0;
     width: 100%;
-    padding: 80px 15px 20px;
+    padding: 80px 10px 20px;
     height: auto;
     overflow: visible;
   }
 
   .paper {
-    padding: 50px 25px 100px;
+    padding: 50px 20px 100px;
     max-width: 100%;
     min-height: auto;
+  }
+
+  .paper::before,
+  .paper::after {
+    width: 100px;
+    height: 100px;
+  }
+
+  .paper-overlay {
+    width: 150px;
+    height: 150px;
+    opacity: 0.1;
+  }
+
+  /* Mobile Typography (Squished text fix) */
+  p {
+    font-size: 1.05rem;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
   }
 
   .intro {
@@ -892,12 +1065,60 @@ strong {
 
   .rosette {
     margin: 0 auto;
+    width: 120px;
   }
 
   .background-hobbies {
     flex-direction: column;
   }
 
+  /* Artist Carousel Fixes */
+  .artist-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .carousel-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  .carousel-btn.prev {
+    left: -5px;
+  }
+
+  .carousel-btn.next {
+    right: -5px;
+  }
+
+  .art-viewer img {
+    max-height: 300px;
+    border-width: 8px;
+  }
+
+  .art-viewer .poem-card {
+    padding: 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .poem-card p {
+    font-size: 0.85rem;
+  }
+
+  .poem-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .art-caption h4 {
+    font-size: 1.1rem;
+  }
+
+  .art-caption p {
+    font-size: 0.9rem;
+  }
+
+  /* Work Page */
   .lace-frame-container {
     aspect-ratio: auto;
     background: var(--cream);
@@ -912,72 +1133,16 @@ strong {
     left: 0;
     right: 0;
     bottom: 0;
+    padding: 1rem;
   }
 
-  h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-  }
-}
-
-/* ===== Responsive fixes ===== */
-.background-hobbies {
-  align-items: flex-start;
-}
-
-.hobbies-slideshow-wrapper {
-  width: 100%;
-  max-width: 560px;
-}
-
-.hobbies-slideshow {
-  width: 100%;
-  aspect-ratio: 4/3;
-  height: auto;
-  min-height: 240px;
-}
-
-.contact-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.vintage-form {
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-  align-items: stretch;
-}
-
-.form-group,
-.vintage-form input,
-.vintage-form textarea,
-.submit-btn {
-  width: 100%;
-}
-
-.carousel-slide.art-item[data-category="writing"] {
-  align-items: flex-start;
-}
-
-.art-viewer {
-  align-items: stretch;
-  justify-content: flex-start;
-}
-
-.art-viewer .poem-card {
-  width: 100%;
-  min-height: 420px;
-  text-align: left;
-}
-
-@media (max-width:900px) {
-  .paper {
-    overflow: visible;
+  .vintage-form input,
+  .vintage-form textarea {
+    text-align: left;
   }
 
-  .background-hobbies {
-    gap: 1.25rem;
+  /* Photobook */
+  .photobook-container {
+    max-width: 100%;
   }
 }

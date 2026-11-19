@@ -65,11 +65,10 @@
     <section class="chat-panel" id="chatPanel" aria-hidden="true">
       <header class="chat-header">
         <div class="chat-title">
-          <img class="chat-title-bird" src="media/images/dove.png" loading="lazy" decoding="async" alt="">
           <h3>Message Board</h3>
         </div>
         <div class="chat-header-actions">
-          <!-- Admin button removed -->
+          <button class="chat-admin" id="chatAdmin" title="Admin login" aria-label="Admin login">🔒</button>
           <button class="chat-exit" id="chatExit" aria-label="Close message board">×</button>
         </div>
       </header>
@@ -82,6 +81,19 @@
         <button class="chat-send" type="submit" aria-label="Send">Send</button>
       </form>
     </section>
+
+    <!-- Admin Login Modal -->
+    <div class="chat-login" id="chatLogin" aria-hidden="true">
+      <div class="chat-login-box">
+        <h4>Admin Login</h4>
+        <input type="password" id="chatPassword" placeholder="Password" autocomplete="off">
+        <p class="chat-login-error" id="chatLoginError"></p>
+        <div class="chat-login-actions">
+          <button type="button" id="chatLoginCancel">Cancel</button>
+          <button type="button" id="chatLoginSubmit">Enter</button>
+        </div>
+      </div>
+    </div>
 
     <!-- Firebase Config -->
     <script type="module">
@@ -122,8 +134,6 @@
         orderBy,
         serverTimestamp
       };
-
-      // Tell the script that Firebase is loaded
       window.dispatchEvent(new Event('firebase-ready'));
     </script>
 

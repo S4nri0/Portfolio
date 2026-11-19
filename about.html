@@ -29,7 +29,7 @@
           <!-- Intro & Hobbies -->
           <section class="background-hobbies">
             <div class="background-text">
-              <h1 align="center">Who is Divine?</h1>
+              <h1>Who is Divine?</h1>
               <p>I am a Chicago-based student passionate about data, sociology, and community building. Outside of my academic work, I dabble in art and writing; I love exploring different mediums, from ceramics and sculpture to sketches and creative writing.</p>
               <p>I come from a family of immigrants from the Democratic Republic of Congo 🇨🇩 ! I've lived in the Chicagoland suburbs most of my life.</p>
               <p>When I'm not studying or making art, I enjoy exploring the city, trying new coffee shops, and crafting with friends. Here are a few snapshots of my life!</p>
@@ -67,12 +67,25 @@
               <button class="carousel-btn prev" id="artPrev">❮</button>
               <div class="carousel-track" id="artTrack">
 
-                <!-- Drawing Items -->
+                <!-- Drawing Items (With optional captions) -->
                 <div class="carousel-slide art-item" data-category="drawing">
-                  <div class="art-viewer"><img src="media/images/sketch.jpg" alt="Pencil sketch"></div>
+                  <div class="art-viewer">
+                    <img src="media/images/sketch.jpg" alt="Pencil sketch">
+                    <!-- Optional Caption -->
+                    <div class="art-caption">
+                      <h4>Title of Sketch</h4>
+                      <p><em>Graphite on paper, 2023</em></p>
+                    </div>
+                  </div>
                 </div>
                 <div class="carousel-slide art-item" data-category="drawing">
-                  <div class="art-viewer"><img src="media/images/spring-summer.jpg" alt="Spring into Summer"></div>
+                  <div class="art-viewer">
+                    <img src="media/images/spring-summer.jpg" alt="Spring into Summer">
+                    <div class="art-caption">
+                      <h4>Spring into Summer</h4>
+                      <p><em>Acrylic on canvas, 2024</em></p>
+                    </div>
+                  </div>
                 </div>
                 <div class="carousel-slide art-item" data-category="drawing">
                   <div class="art-viewer"><img src="media/images/orange-profile.jpg" alt="Orange profile"></div>
@@ -83,7 +96,13 @@
 
                 <!-- Ceramic Items -->
                 <div class="carousel-slide art-item" data-category="ceramic">
-                  <div class="art-viewer"><img src="media/images/mug.jpg" alt="Face Mug"></div>
+                  <div class="art-viewer">
+                    <img src="media/images/mug.jpg" alt="Face Mug">
+                    <div class="art-caption">
+                      <h4>Face Mug</h4>
+                      <p><em>Glazed ceramic, 2023</em></p>
+                    </div>
+                  </div>
                 </div>
                 <div class="carousel-slide art-item" data-category="ceramic">
                   <div class="art-viewer"><img src="media/images/owl-side.jpg" alt="Owl side"></div>
@@ -105,10 +124,9 @@
                   <div class="art-viewer">
                     <div class="poem-card">
                       <h3>Black Willows</h3>
-                      <p align="right"><em>"All trees bear fruit, not all fruit is for us,<br>poisoned by conquest and desire.<br>Inherit all worldly goods,<br>accept Divine punishment.<br>May the branches of willows sweep you away."<br>
-                          <hr>
-                        </em></p>
-                      <p>The cacophony of the creatures echoed through the wetlands, and a willow tree at the rim of the river swayed back and forth with the wind. Adorned with fireflies dancing between its branches, towering over every other tree, mature yet afflicted. Life flourishes around it, though its roots are rotten; it persists. Thriving not off the land but the words of men, it is not of nature.<br>The full moon reflected on the stream, making it glow and burst with light.<br>She is awake tonight.<br>The wind howls and the sky showers. The earth beneath the tree gave way to her, and she clawed herself out, racing against time. Knowing the soil would swallow her once more if she lingered. Dormant for a lifetime, stuck in decay. For the first time in a long time, Opal was among the living.<br>She rested her head on the willow's wet bark. She wiped the mud off her face to peek through the swaying branches. The fireflies swarmed toward her, forming an aura around her. Slowly but surely, the blood pooling in her legs changed from dead, dark blood to fresh, hot blood. The rebirth process was like igniting her cold, lifeless body—combining the chill of death with the fever of life. Opal dry heaved and screamed all night, barely making a sound. Her vocal cords were still partly decayed.<br>In the morning, Opal's quiet body lay bare beneath the willow tree. A naked woman lay resting under the willow tree, no younger than 25, her dark skin radiant and lively once again. The distant rumble of a car grew louder and louder.<br><strong><em>SLAM</em></strong><br><em>thump thump tump</em><br>"What the <strong>fuck?</strong>…" Harper exclaimed.</p>
+                      <p><em>"All trees bear fruit, not all fruit is for us,<br>poisoned by conquest and desire.<br>Inherit all worldly goods,<br>accept Divine punishment.<br>May the branches of willows sweep you away."</em></p>
+                      <p>The cacophony of the creatures echoed through the wetlands, and a willow tree at the rim of the river swayed back and forth with the wind. Adorned with fireflies dancing between its branches, towering over every other tree, mature yet afflicted. Life flourishes around it, though its roots are rotten; it persists. Thriving not off the land but the words of men, it is not of nature.</p>
+                      <p>The full moon reflected on the stream, making it glow and burst with light.<br>She is awake tonight.<br>The wind howls and the sky showers. The earth beneath the tree gave way to her, and she clawed herself out, racing against time. Knowing the soil would swallow her once more if she lingered. Dormant for a lifetime, stuck in decay. For the first time in a long time, Opal was among the living.</p>
                     </div>
                   </div>
                 </div>
@@ -120,26 +138,25 @@
 
           <div class="image-divider"><img src="media/images/divider.png" alt="Divider"></div>
 
-          <!-- Involvement -->
+          <!-- Involvement / Photobook Slideshow -->
           <section class="involvement">
             <h1>What I'm up to!</h1>
-            <p>A look at my college journey: Organizing and showing in different ways. On and Off campus</p>
+            <p>A look at my college journey: Organizing and showing in different ways. On and Off campus.</p>
 
-          <!-- Photobook Slideshow -->
-          <section class="photobook-section">
-            <div class="photobook-container">
-              <div class="photo-frame" id="photoFrame">
-                <img id="albumPhoto" src="media/images/CODscholar.jpg" alt="Divine's College Journey">
+            <section class="photobook-section">
+              <div class="photobook-container">
+                <div class="photo-frame" id="photoFrame">
+                  <img id="albumPhoto" src="media/images/CODscholar.jpg" alt="Divine's College Journey">
+                </div>
+                <button id="prevBtn" class="album-btn prev">Prev</button>
+                <button id="nextBtn" class="album-btn next">Next</button>
               </div>
-              <button id="prevBtn" class="album-btn prev">Prev</button>
-              <button id="nextBtn" class="album-btn next">Next</button>
-            </div>
-            <div class="album-info">
-              <h2 id="albumTitle">COD Foundation Scholar Award Recipient</h2>
-              <p id="albumDescription">Received the COD Foundation Scholarship.</p>
-            </div>
+              <div class="album-info">
+                <h2 id="albumTitle">COD Foundation Scholar Award Recipient</h2>
+                <p id="albumDescription">Received the COD Foundation Scholarship.</p>
+              </div>
+            </section>
           </section>
-           </section>
 
         </div>
       </div>

@@ -28,6 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const chatInput = document.getElementById('chatInput');
   const chatMessages = document.getElementById('chatMessages');
   const chatForm = document.getElementById('chatForm');
+  const chatAdmin = document.getElementById('chatAdmin');
+  const chatLogin = document.getElementById('chatLogin');
+  const chatPassword = document.getElementById('chatPassword');
+  const chatLoginError = document.getElementById('chatLoginError');
 
   if (chatToggle && chatPanel) {
     chatToggle.addEventListener('click', () => {
@@ -42,13 +46,40 @@ document.addEventListener('DOMContentLoaded', () => {
     chatExit.addEventListener('click', () => chatPanel.classList.remove('open'));
   }
 
+  // Admin Login UI Logic
+  if (chatAdmin) {
+    chatAdmin.addEventListener('click', () => {
+      if (document.body.classList.contains('chat-admin-mode')) {
+        document.body.classList.remove('chat-admin-mode');
+        chatAdmin.classList.remove('unlocked');
+        chatAdmin.title = "Admin login";
+      } else {
+        chatLogin.classList.add('open');
+        chatLoginError.textContent = "";
+        chatPassword.value = "";
+        chatPassword.focus();
+      }
+    });
+  }
+
+  document.getElementById('chatLoginCancel')?.addEventListener('click', () => chatLogin.classList.remove('open'));
+  document.getElementById('chatLoginSubmit')?.addEventListener('click', () => {
+    if (chatPassword.value === 'maggie303') {
+      document.body.classList.add('chat-admin-mode');
+      chatAdmin.classList.add('unlocked');
+      chatAdmin.title = "Admin mode (click to log out)";
+      chatLogin.classList.remove('open');
+    } else {
+      chatLoginError.textContent = "Incorrect password.";
+    }
+  });
+
   // ============================================================
   // 3. CHAT WIDGET LOGIC (Requires Firebase)
   // ============================================================
   window.addEventListener('firebase-ready', () => {
-    // If Firebase is blocked by an adblocker or fails to load
     if (!window.firebaseChat) {
-      if (chatMessages) chatMessages.innerHTML = '<p style="text-align:center;color:gray;">Chat is currently offline.</p>';
+      if (chatMessages) chatMessages.innerHTML = '<p style="text-align:center;color:gray;">Chat is offline.</p>';
       return;
     }
 
@@ -57,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
       collection,
       addDoc,
       getDocs,
+      deleteDoc,
       doc,
       query,
       orderBy,
@@ -64,7 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } = window.firebaseChat;
     const messagesCollection = collection(db, 'messages');
     const messagesQuery = query(messagesCollection, orderBy('time', 'desc'));
-
     const nameInput = document.getElementById('chatName');
 
     if (!chatForm) return;
@@ -95,11 +126,17 @@ document.addEventListener('DOMContentLoaded', () => {
           const row = document.createElement('div');
           row.className = 'chat-msg';
           row.innerHTML = `
-            <div style="font-size:0.8rem; color:var(--ink-soft); margin-bottom:4px;">
-              <strong>${msg.name}</strong> • ${formatTime(msg.time)}
+            <div style="font-size:0.8rem; color:var(--ink-soft); margin-bottom:4px; display:flex; justify-content:space-between;">
+              <strong>${msg.name}</strong> <span>${formatTime(msg.time)}</span>
             </div>
-            <div class="chat-msg-bubble">${msg.text}</div>`;
+            <div class="chat-msg-bubble">${msg.text}</div>
+            <button class="chat-msg-delete" style="display:none; background:none; border:none; color:#b14c5c; cursor:pointer; font-size:1.1rem;" title="Delete">×</button>`;
 
+          row.querySelector('.chat-msg-delete').addEventListener('click', async () => {
+            if (!document.body.classList.contains('chat-admin-mode')) return;
+            await deleteDoc(doc(db, 'messages', docSnap.id));
+            renderMessages();
+          });
           chatMessages.appendChild(row);
           count++;
         });
