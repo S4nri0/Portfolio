@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }));
 
   // ============================================================
-  // 2. CHAT WIDGET UI (Always works, even if Firebase fails)
+  // 2. CHAT WIDGET UI
   // ============================================================
   const chatPanel = document.getElementById('chatPanel');
   const chatToggle = document.getElementById('chatToggle');
@@ -75,9 +75,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ============================================================
-  // 3. CHAT WIDGET LOGIC (Requires Firebase)
+  // 3. CHAT WIDGET LOGIC (Race Condition Fixed)
   // ============================================================
-  window.addEventListener('firebase-ready', () => {
+  const initChat = () => {
     if (!window.firebaseChat) {
       if (chatMessages) chatMessages.innerHTML = '<p style="text-align:center;color:gray;">Chat is offline.</p>';
       return;
@@ -163,7 +163,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     renderMessages();
-  });
+  };
+
+  // Run immediately if Firebase is loaded, otherwise wait for the event
+  if (window.firebaseChat) {
+    initChat();
+  } else {
+    window.addEventListener('firebase-ready', initChat);
+  }
 
   // ============================================================
   // 4. GENERIC CAROUSEL FUNCTION

@@ -342,7 +342,6 @@ strong {
 .carousel-btn {
   position: absolute;
   top: 15px;
-  /* Fixed: Moved to the top so it doesn't float in the middle of empty space */
   transform: none;
   background: var(--purple);
   color: #fff;
@@ -529,7 +528,7 @@ strong {
 }
 
 /* ============================================================
-   PHOTOBOOK (FIXED OVERLAP & NUDGE)
+   PHOTOBOOK (FIXED CROPPING & CENTERING)
    ============================================================ */
 .photobook-section {
   display: flex;
@@ -543,39 +542,42 @@ strong {
   position: relative;
   flex: 0 1 450px;
   max-width: 450px;
-  aspect-ratio: 1.4 / 1;
+  /* Matched to the natural ratio of your wireframe image */
+  aspect-ratio: 1.6 / 1;
 }
 
-/* The frame is now a pseudo-element that sits on top */
+/* The frame sits on top and stretches exactly to the container */
 .photobook-container::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('media/images/photobook.png') no-repeat center / 100% 100%;
+  background: url('media/images/photobook.png') no-repeat center center / 100% 100%;
   z-index: 2;
-  /* Puts frame above the image */
   pointer-events: none;
 }
 
+/* This is the "window" that lines up perfectly with the purple borders */
 .photo-frame {
   position: absolute;
-  top: 11.5%;
-  left: 20%;
-  /* Nudged left */
-  right: 7.5%;
-  bottom: 12%;
+  top: 10%;
+  left: 15%;
+  /* Nudged to the right to clear the pink spiral */
+  right: 3%;
+  bottom: 11%;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   z-index: 1;
-  /* Puts image below the frame */
 }
 
+/* object-fit: cover fills the box without stretching. 
+   object-position: center crops the image evenly. */
 .photo-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   transition: opacity 0.3s ease;
 }
 
@@ -583,7 +585,7 @@ strong {
   position: absolute;
   bottom: 2%;
   background: var(--sage-deep);
-  color: #fff;
+  color: #fff; 
   border: none;
   padding: 8px 20px;
   border-radius: 20px;
@@ -592,7 +594,7 @@ strong {
 }
 
 .album-btn.prev {
-  left: 5%;
+  right: 50%;
 }
 
 .album-btn.next {
@@ -785,7 +787,7 @@ strong {
 }
 
 /* ============================================================
-   CHAT WIDGET
+   CHAT WIDGET (VISIBILITY FIX)
    ============================================================ */
 .chat-toggle {
   position: fixed;
@@ -879,12 +881,19 @@ strong {
   padding-right: 5px;
 }
 
+/* Added explicit styling for chat messages */
+.chat-msg {
+  background: var(--cream);
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e0d8cd;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.05);
+}
+
 .chat-msg-bubble {
-  background: var(--sage);
-  padding: 8px 12px;
-  border-radius: 12px;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   word-break: break-word;
+  color: var(--ink);
 }
 
 .chat-form {
@@ -956,7 +965,7 @@ strong {
 }
 
 /* ============================================================
-   MOBILE RESPONSIVE (H1 Size Kept Big)
+   MOBILE RESPONSIVE
    ============================================================ */
 @media (max-width: 900px) {
   body {
@@ -1037,8 +1046,6 @@ strong {
     height: 150px;
     opacity: 0.1;
   }
-
-  /* H1 size is not reduced here, so it stays big */
 
   .intro {
     flex-direction: column;
