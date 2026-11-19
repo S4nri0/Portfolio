@@ -75,7 +75,8 @@
 
       <div class="chat-messages" id="chatMessages" aria-live="polite"></div>
 
-      <form class="chat-form" id="chatForm" autocomplete="off">
+      <!-- Added onsubmit to prevent page refresh -->
+      <form class="chat-form" id="chatForm" autocomplete="off" onsubmit="event.preventDefault();">
         <input class="chat-name" id="chatName" type="text" placeholder="Your name" maxlength="30" required>
         <input class="chat-input" id="chatInput" type="text" placeholder="Leave a message…" maxlength="280" required>
         <button class="chat-send" type="submit" aria-label="Send">Send</button>

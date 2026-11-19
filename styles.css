@@ -133,7 +133,6 @@ a {
   overflow: hidden;
 }
 
-/* Toned down corners so they don't block text */
 .paper::before,
 .paper::after {
   content: '';
@@ -159,7 +158,6 @@ a {
   background-image: url('media/images/brtp.png');
 }
 
-/* Toned down writing overlay */
 .paper-overlay {
   position: absolute;
   width: 260px;
@@ -319,7 +317,7 @@ strong {
 }
 
 /* ============================================================
-   CAROUSEL SYSTEM (FIXED SPACING)
+   CAROUSEL SYSTEM
    ============================================================ */
 .carousel-container {
   position: relative;
@@ -333,7 +331,6 @@ strong {
   align-items: flex-start;
 }
 
-/* Align to top */
 .carousel-slide {
   min-width: 100%;
   padding: 1rem;
@@ -342,12 +339,11 @@ strong {
   align-items: flex-start;
 }
 
-/* Items align to top */
-
 .carousel-btn {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 15px;
+  /* Fixed: Moved to the top so it doesn't float in the middle of empty space */
+  transform: none;
   background: var(--purple);
   color: #fff;
   border: none;
@@ -369,11 +365,11 @@ strong {
 }
 
 .carousel-btn.prev {
-  left: -10px;
+  left: 10px;
 }
 
 .carousel-btn.next {
-  right: -10px;
+  right: 10px;
 }
 
 /* Art Viewer */
@@ -395,7 +391,6 @@ strong {
   margin-bottom: 0.5rem;
 }
 
-/* Art Captions */
 .art-caption {
   margin-top: 1rem;
   font-family: var(--font-body);
@@ -416,7 +411,6 @@ strong {
   margin: 0;
 }
 
-/* Poem Card */
 .art-viewer .poem-card {
   width: 100%;
   max-width: 600px;
@@ -509,7 +503,6 @@ strong {
   object-fit: cover;
 }
 
-/* Art Filters */
 .art-filters {
   display: flex;
   justify-content: center;
@@ -535,7 +528,9 @@ strong {
   color: #fff;
 }
 
-/* Photobook (Fixed to fit inside purple lines) */
+/* ============================================================
+   PHOTOBOOK (FIXED OVERLAP & NUDGE)
+   ============================================================ */
 .photobook-section {
   display: flex;
   gap: 3rem;
@@ -549,20 +544,32 @@ strong {
   flex: 0 1 450px;
   max-width: 450px;
   aspect-ratio: 1.4 / 1;
-  background: url('media/images/photobook.png') no-repeat center / 100% 100%;
 }
 
-/* Cropped to fit exactly inside the purple border */
+/* The frame is now a pseudo-element that sits on top */
+.photobook-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('media/images/photobook.png') no-repeat center / 100% 100%;
+  z-index: 2;
+  /* Puts frame above the image */
+  pointer-events: none;
+}
+
 .photo-frame {
   position: absolute;
   top: 11.5%;
-  left: 17%;
-  right: 7%;
+  left: 20%;
+  /* Nudged left */
+  right: 7.5%;
   bottom: 12%;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  z-index: 1;
+  /* Puts image below the frame */
 }
 
 .photo-frame img {
@@ -676,7 +683,6 @@ strong {
   margin-bottom: 1rem;
 }
 
-/* Project Cards */
 .projects-grid {
   display: flex;
   flex-wrap: wrap;
@@ -708,7 +714,6 @@ strong {
   text-align: center;
 }
 
-/* Contact Form (Centered) */
 .contact-section {
   display: flex;
   flex-direction: column;
@@ -780,7 +785,7 @@ strong {
 }
 
 /* ============================================================
-   CHAT WIDGET (FIXED)
+   CHAT WIDGET
    ============================================================ */
 .chat-toggle {
   position: fixed;
@@ -882,7 +887,6 @@ strong {
   word-break: break-word;
 }
 
-/* Fixed Form Layout */
 .chat-form {
   display: flex;
   gap: 6px;
@@ -952,7 +956,7 @@ strong {
 }
 
 /* ============================================================
-   MOBILE RESPONSIVE & TYPOGRAPHY ADJUSTMENTS
+   MOBILE RESPONSIVE (H1 Size Kept Big)
    ============================================================ */
 @media (max-width: 900px) {
   body {
@@ -1034,19 +1038,7 @@ strong {
     opacity: 0.1;
   }
 
-  /* Mobile Typography (Squished text fix) */
-  p {
-    font-size: 1.05rem;
-  }
-
-  h1 {
-    font-size: 2.8rem;
-    margin-bottom: 1rem;
-  }
-
-  h2 {
-    font-size: 1.6rem;
-  }
+  /* H1 size is not reduced here, so it stays big */
 
   .intro {
     flex-direction: column;
@@ -1072,7 +1064,6 @@ strong {
     flex-direction: column;
   }
 
-  /* Artist Carousel Fixes */
   .artist-header {
     flex-direction: column;
     gap: 1rem;
@@ -1099,7 +1090,6 @@ strong {
 
   .art-viewer .poem-card {
     padding: 1.2rem;
-    font-size: 0.9rem;
   }
 
   .poem-card p {
@@ -1118,7 +1108,6 @@ strong {
     font-size: 0.9rem;
   }
 
-  /* Work Page */
   .lace-frame-container {
     aspect-ratio: auto;
     background: var(--cream);
@@ -1141,7 +1130,6 @@ strong {
     text-align: left;
   }
 
-  /* Photobook */
   .photobook-container {
     max-width: 100%;
   }
