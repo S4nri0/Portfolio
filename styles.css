@@ -198,6 +198,7 @@ a {
   max-width: 850px;
   margin: 0 auto;
   display: flex;
+  padding-top: 25px;
   flex-direction: column;
   gap: 3rem;
 }
@@ -629,10 +630,10 @@ strong {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  border: 6px solid #fff;
-  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.15);
-  overflow: hidden;
+  border-width: 3px;
+  border-color: lavender;
   transform: rotate(-3deg);
+  overflow: hidden;
 }
 
 .artist-photo-frame img {
@@ -916,5 +917,67 @@ strong {
   h1 {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
+  }
+}
+
+/* ===== Responsive fixes ===== */
+.background-hobbies {
+  align-items: flex-start;
+}
+
+.hobbies-slideshow-wrapper {
+  width: 100%;
+  max-width: 560px;
+}
+
+.hobbies-slideshow {
+  width: 100%;
+  aspect-ratio: 4/3;
+  height: auto;
+  min-height: 240px;
+}
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vintage-form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.form-group,
+.vintage-form input,
+.vintage-form textarea,
+.submit-btn {
+  width: 100%;
+}
+
+.carousel-slide.art-item[data-category="writing"] {
+  align-items: flex-start;
+}
+
+.art-viewer {
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.art-viewer .poem-card {
+  width: 100%;
+  min-height: 420px;
+  text-align: left;
+}
+
+@media (max-width:900px) {
+  .paper {
+    overflow: visible;
+  }
+
+  .background-hobbies {
+    gap: 1.25rem;
   }
 }
