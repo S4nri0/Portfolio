@@ -282,12 +282,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (nextBtn && albumPhoto) {
     const slidesData = [{
-        img: "media/images/SF1.jpg",
+        img: "media/images/SF2.jpg",
         title: "STEM Forward",
         text: ""
       },
       {
-        img: "media/images/SF2.png",
+        img: "media/images/SF1.png",
         title: "STEM Forward",
         text: ""
       },
