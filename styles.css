@@ -316,6 +316,17 @@ strong {
   filter: drop-shadow(0 6px 14px rgba(120, 30, 40, 0.25));
 }
 
+.grad {
+  flex: 0 0 auto;
+  width: 450px;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+  transform: none;
+  filter: drop-shadow(0 6px 14px rgba(120, 30, 40, 0.25));
+}
+
 /* ============================================================
    CAROUSEL SYSTEM
    ============================================================ */

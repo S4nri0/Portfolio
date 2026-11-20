@@ -282,14 +282,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (nextBtn && albumPhoto) {
     const slidesData = [{
+        img: "media/images/SF1.jpg",
+        title: "STEM Forward",
+        text: ""
+      },
+      {
+        img: "media/images/SF2.png",
+        title: "STEM Forward",
+        text: ""
+      },
+      {
         img: "media/images/CODscholar.jpg",
-        title: "COD Foundation Scholar",
-        text: "Received the COD Foundation Scholarship."
+        title: "Civic Leaders Program",
+        text: "I had the opportunity to participate in the 2024 summer Civic Leaders Program, where I was trained as a poll worker. This experience greatly enhanced my understanding of the importance of civic engagement and the valuable role I play as both a student and an active member of my community."
       },
       {
         img: "media/images/AM1.jpg",
         title: "Student Ambassador Captain",
-        text: "Led campus tours and recruitment events."
+        text: "My experience as a student ambassador was not only enjoyable but also strengthened my leadership skills. Being the first person a new student encounters requires me to be a role model and a knowledgeable resource. Whether I was giving campus tours, participating in scholarship events, or attending open houses, I made sure to present myself positively, lead my team effectively, and ensure that everyone left with the information they needed to enhance their college experience."
+      },
+      {
+        img: "media/images/AM2.jpg",
+        title: "Student Ambassador Captain",
+        text: "My experience as a student ambassador was not only enjoyable but also strengthened my leadership skills. Being the first person a new student encounters requires me to be a role model and a knowledgeable resource. Whether I was giving campus tours, participating in scholarship events, or attending open houses, I made sure to present myself positively, lead my team effectively, and ensure that everyone left with the information they needed to enhance their college experience."
       },
       {
         img: "media/images/BSA1.jpg",
@@ -297,10 +312,25 @@ document.addEventListener('DOMContentLoaded', () => {
         text: "Fostered community and academic support."
       },
       {
+        img: "media/images/BSA2.jpg",
+        title: "Black Student Alliance President",
+        text: "Fostered community and academic support."
+      },
+      {
         img: "media/images/FAS1.jpg",
         title: "Fine Arts Studio Founder",
         text: "Built a community for artists across all majors."
-      }
+      },
+      {
+        img: "media/images/FAS2.jpg",
+        title: "Fine Arts Studio Founder",
+        text: "Built a community for artists across all majors."
+      },
+      {
+        img: "media/images/Divine5.jpg",
+        title: "Being A Part of My Community",
+        text: "There is nothing more valuable than being a part of your community and making a mark. I dedicate my time, on and off campus, to make sure that I am making the best of the opportunities around me while also being a positive force for change. Throughout my college journey, I have been a leader and organizer of so many wonderful initiatives that inspire me to strive for excellence. And overall, they were fun too!"
+      },
     ];
     let currentIndex = 0;
     [albumPhoto, albumTitle, albumDescription].forEach(el => el.style.transition = 'opacity 0.3s ease');
