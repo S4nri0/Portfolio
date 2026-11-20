@@ -56,7 +56,9 @@
           </div>
           <img class="rosette" src="media/images/uic-rosette.png" loading="lazy" decoding="async" alt="University of Illinois Chicago">
         </section>
-        <section class="studying">
+        
+        <!-- ADDED 'reverse' CLASS HERE -->
+        <section class="studying reverse">
           <img class="grad" src="media/images/grad.png" loading="lazy" decoding="async" alt="College of DuPage">
           <div class="studying-text">
             <p>
@@ -67,6 +69,7 @@
             <img src="media/images/ptk.png" alt="Phi Theta Kappa Honors Society" height="50px">
             </a>
           </div>
+        </section>
       </div>
     </main>
 
@@ -88,7 +91,6 @@
 
       <div class="chat-messages" id="chatMessages" aria-live="polite"></div>
 
-      <!-- Removed inline onsubmit to rely on JS -->
       <form class="chat-form" id="chatForm" autocomplete="off">
         <input class="chat-name" id="chatName" type="text" placeholder="Your name" maxlength="30" required>
         <input class="chat-input" id="chatInput" type="text" placeholder="Leave a message…" maxlength="280" required>
@@ -96,7 +98,6 @@
       </form>
     </section>
 
-    <!-- Admin Login Modal -->
     <div class="chat-login" id="chatLogin" aria-hidden="true">
       <div class="chat-login-box">
         <h4>Admin Login</h4>
@@ -109,7 +110,6 @@
       </div>
     </div>
 
-    <!-- Firebase Config -->
     <script type="module">
       import {
         initializeApp

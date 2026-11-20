@@ -572,7 +572,6 @@ strong {
   position: absolute;
   top: 10%;
   left: 15%;
-  /* Nudged to the right to clear the pink spiral */
   right: 3%;
   bottom: 11%;
   display: flex;
@@ -613,11 +612,11 @@ strong {
 }
 
 .album-info {
-  flex: 1 1 350px;
+  flex: 1 1 450px;
   background: var(--cream);
   padding: 2.5rem;
   border-radius: 8px;
-  border: 1px dashed var(--purple-deep);
+  border: 1px var(--purple-deep);
 }
 
 /* ============================================================
@@ -1067,15 +1066,24 @@ strong {
     margin: 0 auto;
   }
 
-  .studying {
+    .studying {
     flex-direction: column;
     text-align: center;
     gap: 20px;
   }
+  
+  .studying.reverse {
+    flex-direction: column-reverse; 
+  }
 
   .rosette {
     margin: 0 auto;
-    width: 120px;
+    width: 120px; 
+  }
+  
+  .grad{
+    margin: 0 auto;
+    width: 320px;
   }
 
   .background-hobbies {
@@ -1152,3 +1160,63 @@ strong {
     max-width: 100%;
   }
 }
+
+/* ============================================================
+   MEDIA SECTION (Add this near the ABOUT PAGE styles)
+   ============================================================ */
+.media-section {
+  margin-top: 2rem;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.media-card {
+  background: var(--cream);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e0d8cd;
+  box-shadow: 2px 4px 10px rgba(90, 80, 60, 0.05);
+}
+
+.media-card h3 {
+  font-family: var(--font-heading);
+  color: var(--purple-deep);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px dashed var(--ink-soft);
+  padding-bottom: 0.5rem;
+}
+
+.media-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.media-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--purple);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.media-link:hover {
+  color: var(--purple-deep);
+}
+
+.media-list {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.media-list li {
+  margin-bottom: 0.5rem;
+}
+
