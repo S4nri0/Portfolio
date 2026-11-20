@@ -597,7 +597,7 @@ strong {
   position: absolute;
   bottom: 2%;
   background: var(--sage-deep);
-  color: #fff; 
+  color: #fff;
   border: none;
   padding: 8px 20px;
   border-radius: 20px;
@@ -619,6 +619,26 @@ strong {
   padding: 2.5rem;
   border-radius: 8px;
   border: 1px var(--purple-deep);
+}
+
+.album-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.album-links a {
+  color: var(--sage-deep);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease;
+}
+
+.album-links a:hover {
+  color: var(--purple-deep);
 }
 
 /* ============================================================
@@ -1068,22 +1088,22 @@ strong {
     margin: 0 auto;
   }
 
-    .studying {
+  .studying {
     flex-direction: column;
     text-align: center;
     gap: 20px;
   }
-  
+
   .studying.reverse {
-    flex-direction: column-reverse; 
+    flex-direction: column-reverse;
   }
 
   .rosette {
     margin: 0 auto;
-    width: 120px; 
+    width: 120px;
   }
-  
-  .grad{
+
+  .grad {
     margin: 0 auto;
     width: 320px;
   }
@@ -1221,4 +1241,3 @@ strong {
 .media-list li {
   margin-bottom: 0.5rem;
 }
-
