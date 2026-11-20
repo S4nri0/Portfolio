@@ -590,7 +590,7 @@ strong {
   height: 100%;
   object-fit: cover;
   object-position: center center;
-  transition: opacity 0.3s ease;
+  transition: none;
 }
 
 .album-btn {
